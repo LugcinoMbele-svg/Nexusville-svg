@@ -34,7 +34,53 @@ const heroStats = [
   ['03','Opportunity','Projects shaped for people, place and progress.']
 ]
 
-function Logo(){ return <Link className="logo" to="/"><span className="logo-mark">N</span><span>NEXUSVILLE<small>(PTY) LTD</small></span></Link> }
+function LogoMark(){
+  return (
+    <div className="brand-mark" aria-label="Nexusville logo">
+      <svg viewBox="0 0 360 360" role="img" aria-label="Nexusville emblem">
+        <defs>
+          <linearGradient id="goldGrad" x1="0%" x2="100%" y1="0%" y2="0%">
+            <stop offset="0%" stopColor="#f5d88d"/>
+            <stop offset="35%" stopColor="#d9aa47"/>
+            <stop offset="70%" stopColor="#f3d37e"/>
+            <stop offset="100%" stopColor="#c58f2d"/>
+          </linearGradient>
+        </defs>
+        <circle cx="180" cy="180" r="146" fill="#0f2d3f" stroke="url(#goldGrad)" strokeWidth="14"/>
+        <circle cx="180" cy="180" r="122" fill="none" stroke="url(#goldGrad)" strokeWidth="8" opacity="0.9"/>
+        <path d="M121 118 L121 245 L159 182 L202 245 L202 118" fill="none" stroke="url(#goldGrad)" strokeWidth="22" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M90 246 C 155 208, 205 208, 270 246" fill="none" stroke="url(#goldGrad)" strokeWidth="10" strokeLinecap="round" opacity="0.88"/>
+        <path d="M60 106 C 90 80, 125 72, 150 78 C 128 96, 118 119, 110 145" fill="none" stroke="url(#goldGrad)" strokeWidth="9" strokeLinecap="round" opacity="0.85"/>
+        <path d="M300 106 C 270 80, 235 72, 210 78 C 232 96, 242 119, 250 145" fill="none" stroke="url(#goldGrad)" strokeWidth="9" strokeLinecap="round" opacity="0.85"/>
+        <path d="M72 232 C 118 282, 147 294, 180 298 C 213 294, 242 282, 288 232" fill="none" stroke="url(#goldGrad)" strokeWidth="9" strokeLinecap="round" opacity="0.9"/>
+        <circle cx="180" cy="180" r="18" fill="url(#goldGrad)" opacity="0.92"/>
+        <circle cx="180" cy="180" r="6" fill="#0f2d3f"/>
+      </svg>
+    </div>
+  )
+}
+
+function BrandWordmark(){
+  return (
+    <div className="brand-wordmark" aria-label="Nexusville wordmark">
+      <div className="brand-title">NEXUSVILLE</div>
+      <div className="brand-subtitle">PTY LTD</div>
+    </div>
+  )
+}
+
+function Logo(){
+  return (
+    <Link className="logo" to="/">
+      <LogoMark/>
+      <div className="logo-text-wrap">
+        <span className="logo-text">NEXUSVILLE</span>
+        <small>(PTY) LTD</small>
+      </div>
+    </Link>
+  )
+}
+
 function Arrow(){ return <span className="arrow">↗</span> }
 function Button({children,to='/contact',secondary=false}){ return <Link className={secondary?'btn btn-outline':'btn'} to={to}>{children}<Arrow/></Link> }
 
@@ -88,6 +134,10 @@ function Home(){
     <section className="hero">
       <div className="hero-image"/>
       <div className="container hero-content">
+        <div className="hero-brand-lockup">
+          <LogoMark/>
+          <BrandWordmark/>
+        </div>
         <span className="eyebrow">South Africa · Development · Innovation</span>
         <h1>BUILDING<br/><em>SUSTAINABLE</em><br/>FUTURES</h1>
         <p>Infrastructure. Innovation. Opportunity.</p>
