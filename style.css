@@ -1,312 +1,420 @@
 /* ==========================================================================
-   Base Styles & Variables
+   1. CSS Variables & Design Tokens
    ========================================================================== */
 :root {
-    --primary-color: #0A2540; /* Deep Corporate Blue */
-    --secondary-color: #00D4FF; /* Tech/Energy Blue-Cyan */
-    --accent-color: #2E8B57; /* Sustainable Green */
-    --text-dark: #333333;
-    --text-light: #666666;
-    --bg-light: #F7F9FC;
+    --bg-deep: #061121;
+    --primary-color: #0A2540; /* Deep Executive Blue */
+    --primary-hover: #13385c;
+    --secondary-color: #00E5FF; /* Vibrant Tech Cyan */
+    --accent-gold: #D4AF37; /* Premium Gold Accent */
+    --accent-green: #10B981; /* Sustainable Eco-Green */
+    --text-main: #1E293B;
+    --text-muted: #64748B;
+    --bg-light: #F8FAFC;
     --white: #FFFFFF;
-    --font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    --shadow-md: 0 10px 25px -5px rgba(10, 37, 64, 0.1), 0 8px 10px -6px rgba(10, 37, 64, 0.1);
+    --shadow-lg: 0 20px 35px -10px rgba(0, 0, 0, 0.15);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* ==========================================================================
+   2. Reset & Base Setup
+   ========================================================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: var(--font-main);
-    line-height: 1.6;
-    color: var(--text-dark);
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.7;
+    color: var(--text-main);
     background-color: var(--white);
     overflow-x: hidden;
 }
 
-h1, h2, h3, h4 {
-    margin-bottom: 1rem;
+h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 1.25;
+    color: var(--primary-color);
 }
 
 h2 {
-    font-size: 2.2rem;
-    color: var(--primary-color);
+    font-size: 2.5rem;
     margin-bottom: 1.5rem;
-    border-bottom: 3px solid var(--accent-color);
+    position: relative;
     display: inline-block;
-    padding-bottom: 0.5rem;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-gold), var(--secondary-color));
+    border-radius: 2px;
 }
 
 p {
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
+    color: var(--text-muted);
 }
 
 a {
-    color: var(--primary-color);
     text-decoration: none;
-    transition: color 0.3s ease;
+    color: inherit;
+    transition: var(--transition-smooth);
 }
 
 /* ==========================================================================
-   Layout Containers
+   3. Reusable Layout Containers
    ========================================================================== */
 .container {
     width: 90%;
-    max-width: 1200px;
+    max-width: 1240px;
     margin: 0 auto;
 }
 
 .section {
-    padding: 4rem 0;
+    padding: 6rem 0;
 }
 
 .bg-light {
     background-color: var(--bg-light);
+    border-top: 1px solid #E2E8F0;
+    border-bottom: 1px solid #E2E8F0;
 }
 
 /* ==========================================================================
-   Header & Navigation (Fixes dark-on-dark issue)
+   4. Premium Glassmorphism Header & Navigation
    ========================================================================== */
 .site-header {
-    background-color: var(--primary-color);
+    background: rgba(6, 17, 33, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     color: var(--white);
-    padding: 1rem 0;
+    padding: 1.25rem 0;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: var(--shadow-md);
 }
 
 .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* Allows stacking on mobile */
+}
+
+.logo-placeholder {
+    display: flex;
+    align-items: center;
 }
 
 .logo-text {
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-size: 1.35rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
     color: var(--white);
+    background: linear-gradient(135deg, var(--white) 30%, var(--secondary-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .main-nav ul {
     list-style: none;
     display: flex;
-    gap: 1.5rem;
+    gap: 2rem;
+    align-items: center;
 }
 
 .main-nav a {
-    color: var(--white);
+    color: rgba(255, 255, 255, 0.8);
     font-weight: 500;
-    padding: 0.5rem 0;
+    font-size: 0.95rem;
+    position: relative;
+    padding: 0.25rem 0;
+}
+
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--secondary-color);
+    transition: var(--transition-smooth);
 }
 
 .main-nav a:hover {
-    color: var(--secondary-color);
+    color: var(--white);
+}
+
+.main-nav a:hover::after {
+    width: 100%;
 }
 
 /* ==========================================================================
-   Hero Section
+   5. Immersive Hero Section
    ========================================================================== */
 .hero {
-    /* Using a linear gradient overlay to ensure text is readable over any image */
-    background: linear-gradient(rgba(10, 37, 64, 0.85), rgba(10, 37, 64, 0.7)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
+    background: linear-gradient(135deg, rgba(6, 17, 33, 0.92) 0%, rgba(10, 37, 64, 0.85) 100%), 
+                url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
     color: var(--white);
-    padding: 6rem 0;
+    padding: 9rem 0 8rem 0;
     text-align: center;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .hero h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    font-size: 3.5rem;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+    letter-spacing: -1px;
 }
 
 .hero .tagline {
-    font-size: 1.2rem;
-    max-width: 800px;
-    margin: 0 auto 2rem auto;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 15px;
-    border-radius: 8px;
-    backdrop-filter: blur(5px);
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 750px;
+    margin: 0 auto 2.5rem auto;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.25rem 1.75rem;
+    border-radius: 12px;
+    backdrop-filter: blur(8px);
 }
 
 .btn-primary {
     display: inline-block;
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-    padding: 0.8rem 2rem;
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 1.1rem;
-    transition: background-color 0.3s ease, transform 0.2s;
+    background: linear-gradient(135deg, var(--secondary-color) 0%, #0099FF 100%);
+    color: var(--bg-deep);
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    box-shadow: 0 10px 20px rgba(0, 229, 255, 0.3);
+    transition: var(--transition-smooth);
 }
 
 .btn-primary:hover {
-    background-color: var(--white);
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 25px rgba(0, 229, 255, 0.4);
+    background: linear-gradient(135deg, #33EDFF 0%, var(--secondary-color) 100%);
 }
 
 /* ==========================================================================
-   Grids & Cards
+   6. Advanced Grids & Elevation Cards
    ========================================================================== */
 .grid-2 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    margin-top: 2rem;
+    gap: 2.5rem;
+    margin-top: 3rem;
 }
 
 .grid-3 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    margin-top: 2rem;
+    margin-top: 3rem;
 }
 
 .card {
     background: var(--white);
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    border-top: 4px solid var(--accent-color);
-    transition: transform 0.3s ease;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid #E2E8F0;
+    border-top: 5px solid var(--accent-gold);
+    transition: var(--transition-smooth);
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: #CBD5E1;
+}
+
+.card h3, .card h4 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
 }
 
 /* ==========================================================================
-   Company Details (Lists)
+   7. Corporate Details Panel
    ========================================================================== */
 .company-details {
-    margin-top: 3rem;
-    background: var(--bg-light);
-    padding: 2rem;
-    border-radius: 8px;
-    border-left: 4px solid var(--primary-color);
+    margin-top: 4rem;
+    background: var(--white);
+    padding: 3rem;
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
+    border-left: 6px solid var(--primary-color);
+    border-top: 1px solid #E2E8F0;
+    border-right: 1px solid #E2E8F0;
+    border-bottom: 1px solid #E2E8F0;
+}
+
+.company-details h3 {
+    margin-bottom: 1.5rem;
 }
 
 .company-details ul, .contact-list {
-    list-style-type: none;
+    list-style: none;
 }
 
 .company-details li, .contact-list li {
-    margin-bottom: 0.8rem;
-    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+    padding-left: 1.75rem;
     position: relative;
+    font-size: 1.05rem;
 }
 
 .company-details li::before, .contact-list li::before {
-    content: '■';
-    color: var(--accent-color);
+    content: '◆';
+    color: var(--accent-gold);
     position: absolute;
     left: 0;
-    top: 2px;
-    font-size: 0.8rem;
+    top: 1px;
+    font-size: 0.85rem;
 }
 
 /* ==========================================================================
-   Twelve Pillars Grid
+   8. Twelve Pillars Layout
    ========================================================================== */
 .pillars-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1rem;
-    margin: 2rem 0;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.25rem;
+    margin: 3rem 0;
 }
 
 .pillar-item {
-    background-color: var(--primary-color);
-    color: var(--white);
-    padding: 1rem;
+    background: var(--white);
+    color: var(--primary-color);
+    padding: 1.25rem 1.5rem;
     text-align: center;
-    border-radius: 5px;
-    font-weight: 500;
-    font-size: 0.95rem;
-    border-bottom: 3px solid var(--accent-color);
+    border-radius: 12px;
+    font-weight: 600;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid #E2E8F0;
+    border-bottom: 4px solid var(--accent-gold);
+    transition: var(--transition-smooth);
+}
+
+.pillar-item:hover {
+    background: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
 }
 
 /* ==========================================================================
-   Timeline
+   9. Executive Timeline
    ========================================================================== */
 .timeline {
-    margin-top: 2rem;
-    border-left: 3px solid var(--accent-color);
-    padding-left: 2rem;
+    margin-top: 3rem;
+    border-left: 3px solid var(--accent-gold);
+    padding-left: 2.5rem;
+    margin-left: 1rem;
 }
 
 .timeline-item {
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
     position: relative;
+    background: var(--white);
+    padding: 1.75rem 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid #E2E8F0;
 }
 
 .timeline-item::before {
     content: '';
-    width: 15px;
-    height: 15px;
+    width: 18px;
+    height: 18px;
     background: var(--secondary-color);
-    border: 3px solid var(--white);
+    border: 4px solid var(--white);
     border-radius: 50%;
     position: absolute;
-    left: -2.65rem;
-    top: 5px;
+    left: -3.4rem;
+    top: 1.5rem;
+    box-shadow: 0 0 0 3px rgba(0, 229, 255, 0.2);
 }
 
 .timeline-item h4 {
     color: var(--primary-color);
     margin-bottom: 0.5rem;
+    font-size: 1.25rem;
 }
 
 /* ==========================================================================
-   Footer
+   10. Footer Design
    ========================================================================== */
 .site-footer {
-    background-color: var(--primary-color);
+    background-color: var(--bg-deep);
     color: rgba(255, 255, 255, 0.7);
     text-align: center;
-    padding: 2rem 0;
-    margin-top: 2rem;
+    padding: 3rem 0;
+    margin-top: 4rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* ==========================================================================
-   Mobile Responsiveness (Media Queries)
+   11. Responsive Design Adjustments (Mobile Media Queries)
    ========================================================================== */
+@media screen and (max-width: 992px) {
+    .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media screen and (max-width: 768px) {
     .header-container {
         flex-direction: column;
-        text-align: center;
-    }
-
-    .main-nav {
-        margin-top: 1rem;
-        width: 100%;
+        gap: 1rem;
     }
 
     .main-nav ul {
-        flex-direction: column;
-        gap: 0.5rem;
-        background-color: rgba(0, 0, 0, 0.1);
-        padding: 1rem;
-        border-radius: 5px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
     }
 
     .hero h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
+    }
+
+    .hero {
+        padding: 6rem 0 5rem 0;
     }
 
     .grid-2, .grid-3 {
-        grid-template-columns: 1fr; /* Stacks cards vertically on small screens */
-    }
-
-    .pillars-grid {
         grid-template-columns: 1fr;
     }
+
+    .timeline {
+        padding-left: 1.5rem;
+        margin-left: 0.5rem;
     }
-    
+
+    .timeline-item::before {
+        left: -2.35rem;
+    }
+}
