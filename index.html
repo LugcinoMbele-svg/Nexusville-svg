@@ -1,12 +1,43 @@
 <!doctype html>
 <html lang="en-ZA">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#0b1517" />
-    <meta name="description" content="Nexusville (Pty) Ltd is a South African development company focused on sustainable infrastructure, property development, renewable energy, technology, innovation and economic development." />
-    <meta name="keywords" content="Nexusville, infrastructure development South Africa, sustainable infrastructure, renewable energy development, property development, smart infrastructure, economic development" />
-    <title>Nexusville (Pty) Ltd | Building Sustainable Futures</title>
-  </head>
-  <body><div id="root"></div><script type="module" src="/src/main.jsx"></script></body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A clean weather dashboard powered by the Open-Meteo public weather API.">
+  <meta name="theme-color" content="#102b3f">
+  <title>Skyline Weather | Live conditions</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="Skyline Weather home"><span class="brand-icon">✦</span><span>SKYLINE<small>WEATHER DASHBOARD</small></span></a>
+      <div class="status"><span class="status-dot"></span><span>Live data</span><span class="updated" id="last-updated">Updating…</span></div>
+    </header>
+
+    <section class="search-panel" aria-labelledby="search-title">
+      <div><p class="kicker">Your weather, at a glance</p><h1 id="search-title">How’s the sky looking?</h1><p class="intro">Search any city for current conditions and a five-day forecast.</p></div>
+      <form id="search-form" class="search-form" role="search">
+        <label class="sr-only" for="city-input">City or place</label>
+        <input id="city-input" name="city" type="search" placeholder="Enter a city, e.g. Cape Town" autocomplete="off" required>
+        <button type="submit" id="search-button">Search <span>↗</span></button>
+      </form>
+      <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+    </section>
+
+    <section id="dashboard" class="dashboard" aria-live="polite">
+      <div class="loading-state" id="loading-state"><span class="loader"></span><p>Finding the latest conditions…</p></div>
+      <div id="weather-content" hidden>
+        <div class="location-heading"><div><p class="kicker">Current conditions</p><h2 id="location-name">—</h2><p id="location-meta">—</p></div><div class="local-time"><span>LOCAL TIME</span><strong id="local-time">—</strong></div></div>
+        <div class="current-grid">
+          <article class="current-card"><div class="weather-symbol" id="current-icon">☀</div><div><p class="temperature"><span id="current-temp">—</span><sup>°C</sup></p><p class="condition" id="current-condition">—</p><p class="feels">Feels like <strong id="feels-like">—</strong>° · <span id="high-low">—</span></p></div></article>
+          <div class="metric-grid"><article class="metric"><span class="metric-icon">💧</span><div><small>HUMIDITY</small><strong id="humidity">—</strong><em>%</em></div></article><article class="metric"><span class="metric-icon">◌</span><div><small>WIND</small><strong id="wind">—</strong><em> km/h</em></div></article><article class="metric"><span class="metric-icon">☂</span><div><small>PRECIPITATION</small><strong id="precipitation">—</strong><em> mm</em></div></article><article class="metric"><span class="metric-icon">◐</span><div><small>UV INDEX</small><strong id="uv">—</strong><em id="uv-label"> —</em></div></article></div>
+        </div>
+        <section class="forecast-section"><div class="section-heading"><div><p class="kicker">Looking ahead</p><h2>Five-day forecast</h2></div><p class="unit-note">Temperatures in °C</p></div><div class="forecast-grid" id="forecast-grid"></div></section>
+        <div class="dashboard-footer"><p>Weather data by <a href="https://open-meteo.com/" target="_blank" rel="noreferrer">Open-Meteo</a> · No API key required</p><button class="refresh-button" id="refresh-button" type="button">↻ Refresh data</button></div>
+      </div>
+    </section>
+  </main>
+</body>
 </html>
