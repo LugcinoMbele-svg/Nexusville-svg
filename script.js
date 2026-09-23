@@ -1,15 +1,47 @@
-const API='https://api.open-meteo.com/v1/forecast';
-const GEOCODE='https://geocoding-api.open-meteo.com/v1/search';
-const state={location:null};
-const $=selector=>document.querySelector(selector);
-const weatherCodes={0:['Clear sky','☀'],1:['Mainly clear','☀'],2:['Partly cloudy','◐'],3:['Overcast','☁'],45:['Fog','≋'],48:['Rime fog','≋'],51:['Light drizzle','☂'],53:['Drizzle','☂'],55:['Heavy drizzle','☂'],61:['Light rain','☂'],63:['Rain','☂'],65:['Heavy rain','☂'],71:['Light snow','❄'],73:['Snow','❄'],75:['Heavy snow','❄'],80:['Rain showers','☂'],81:['Rain showers','☂'],82:['Heavy showers','☂'],95:['Thunderstorm','ϟ'],96:['Storm and hail','ϟ'],99:['Storm and hail','ϟ']};
-function describe(code){return weatherCodes[code]||['Variable conditions','◌']}
-function setMessage(message=''){ $('#form-message').textContent=message }
-function setLoading(loading){$('#loading-state').hidden=!loading;$('#weather-content').hidden=loading}
-function formatDate(date){return new Intl.DateTimeFormat('en-ZA',{weekday:'short',day:'numeric',month:'short'}).format(new Date(`${date}T12:00:00`))}
-function uvLabel(value){return value<3?'Low':value<6?'Moderate':value<8?'High':'Very high'}
-async function findLocation(query){const response=await fetch(`${GEOCODE}?name=${encodeURIComponent(query)}&count=1&language=en&format=json`);if(!response.ok)throw Error('Could not search for that place.');const data=await response.json();if(!data.results?.length)throw Error('No matching place found. Try a nearby city.');return data.results[0]}
-async function getWeather(location){const params=new URLSearchParams({latitude:location.latitude,longitude:location.longitude,current:'temperature_2m,relative_humidity_2m,apparent_temperature,is_day,precipitation,weather_code,wind_speed_10m',hourly:'temperature_2m,precipitation_probability',daily:'weather_code,temperature_2m_max,temperature_2m_min,precipitation_sum,uv_index_max',forecast_days:5,timezone:'auto'});const response=await fetch(`${API}?${params}`);if(!response.ok)throw Error('Weather data is temporarily unavailable.');return response.json()}
-function render(data,location){state.location={location,data};const current=data.current;const [condition,icon]=describe(current.weather_code);$('#location-name').textContent=location.name;$('#location-meta').textContent=[location.admin1,location.country].filter(Boolean).join(' · ');$('#current-icon').textContent=icon;$('#current-temp').textContent=Math.round(current.temperature_2m);$('#current-condition').textContent=condition;$('#feels-like').textContent=Math.round(current.apparent_temperature);$('#humidity').textContent=Math.round(current.relative_humidity_2m);$('#wind').textContent=Math.round(current.wind_speed_10m);$('#precipitation').textContent=Number(current.precipitation||0).toFixed(1);const uv=data.daily.uv_index_max[0];$('#uv').textContent=Math.round(uv);$('#uv-label').textContent=` ${uvLabel(uv)}`;$('#high-low').textContent=`${Math.round(data.daily.temperature_2m_max[0])}° / ${Math.round(data.daily.temperature_2m_min[0])}°`;const local=new Date(data.current.time);$('#local-time').textContent=new Intl.DateTimeFormat('en-ZA',{hour:'2-digit',minute:'2-digit',hour12:false,timeZone:data.timezone}).format(local);$('#last-updated').textContent=`Updated ${new Intl.DateTimeFormat('en-ZA',{hour:'2-digit',minute:'2-digit'}).format(new Date())}`;$('#forecast-grid').innerHTML=data.daily.time.map((date,index)=>{const [label,weatherIcon]=describe(data.daily.weather_code[index]);return `<article class="forecast-day ${index===0?'today':''}"><h3>${index===0?'Today':new Intl.DateTimeFormat('en-ZA',{weekday:'short'}).format(new Date(`${date}T12:00:00`))}</h3><p class="date">${formatDate(date)}</p><div class="forecast-icon" title="${label}">${weatherIcon}</div><p class="forecast-temp">${Math.round(data.daily.temperature_2m_max[index])}° <span>/ ${Math.round(data.daily.temperature_2m_min[index])}°</span></p><p class="rain">☂ ${Math.round(data.daily.precipitation_sum[index]||0)} mm</p></article>`}).join('')}
-async function loadWeather(query='Cape Town'){setLoading(true);setMessage('');try{const location=await findLocation(query);const data=await getWeather(location);render(data,location);setLoading(false)}catch(error){setLoading(false);setMessage(error.message);if(!state.location)$('#weather-content').hidden=true}}
-$('#search-form').addEventListener('submit',event=>{event.preventDefault();const query=$('#city-input').value.trim();if(query)loadWeather(query)});$('#refresh-button').addEventListener('click',()=>state.location&&loadWeather(state.location.location.name));loadWeather();
+// Nexusville site scripts
+
+// Mobile navigation toggle
+(function () {
+  var toggle = document.querySelector('.nav-toggle');
+  var nav = document.getElementById('site-nav');
+  if (!toggle || !nav) return;
+
+  toggle.addEventListener('click', function () {
+    var isOpen = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+
+  // Close the menu after a link is tapped
+  nav.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      nav.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+
+// Contact form: let the visitor know their email client is opening
+(function () {
+  var form = document.querySelector('form.enquiry');
+  if (!form) return;
+
+  form.addEventListener('submit', function () {
+    var btn = form.querySelector('button[type="submit"]');
+    if (btn) {
+      btn.textContent = 'Opening your email client…';
+      btn.disabled = true;
+      setTimeout(function () {
+        btn.textContent = 'Send enquiry';
+        btn.disabled = false;
+      }, 4000);
+    }
+  });
+})();
+
+// Footer year stays current automatically
+(function () {
+  var yearEls = document.querySelectorAll('[data-year]');
+  yearEls.forEach(function (el) {
+    el.textContent = new Date().getFullYear();
+  });
+})();
