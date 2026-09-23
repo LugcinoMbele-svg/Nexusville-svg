@@ -46,13 +46,8 @@ header.site{
   border-bottom:1px solid var(--line-dark);
 }
 header.site .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:16px;padding-bottom:16px;}
-.brand{display:flex;align-items:baseline;gap:10px;text-decoration:none;color:#fff;}
-.brand .mark{
-  width:30px;height:30px;border:1.5px solid var(--accent);
-  display:inline-flex;align-items:center;justify-content:center;
-  font-family:'Fraunces',serif;font-weight:600;color:var(--accent);font-size:15px;
-  flex:none;
-}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff;}
+.logo-mark{width:40px;height:40px;border-radius:50%;flex:none;object-fit:cover;}
 .brand .word{font-family:'Fraunces',serif;font-size:1.15rem;letter-spacing:.01em;}
 .brand .tag{font-size:.72rem;color:#A9B2C2;display:block;margin-top:1px;font-family:'Inter',sans-serif;}
 nav.main{display:flex;gap:26px;flex-wrap:wrap;}
@@ -61,7 +56,15 @@ nav.main a{
   padding-bottom:4px;border-bottom:1px solid transparent;
 }
 nav.main a:hover,nav.main a.active{color:#fff;border-bottom-color:var(--accent);}
-.nav-toggle{display:none;}
+
+.nav-toggle{
+  display:none;flex-direction:column;justify-content:center;gap:5px;
+  width:32px;height:32px;background:none;border:none;cursor:pointer;padding:0;
+}
+.nav-toggle span{display:block;width:100%;height:2px;background:#EDE9DE;transition:transform .2s,opacity .2s;}
+.nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0;}
+.nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
 
 /* Hero */
 .hero{
@@ -69,7 +72,12 @@ nav.main a:hover,nav.main a.active{color:#fff;border-bottom-color:var(--accent);
   color:#EDE9DE;
   padding:88px 0 76px;
   border-bottom:4px solid var(--accent);
+  position:relative;overflow:hidden;
 }
+.hero-city{padding-top:64px;}
+.hero-skyline{position:absolute;bottom:0;left:0;width:100%;height:220px;z-index:0;pointer-events:none;}
+.hero .wrap{position:relative;z-index:1;}
+.hero-logo{width:76px;height:76px;border-radius:50%;object-fit:cover;margin-bottom:22px;box-shadow:0 0 0 1px rgba(176,141,87,.5);}
 .hero .eyebrow{color:var(--accent);font-size:.85rem;margin-bottom:14px;}
 .hero h1{color:#fff;max-width:16ch;}
 .hero p.lead{color:#C9CFDB;font-size:1.15rem;max-width:52ch;}
@@ -139,6 +147,19 @@ table.data th{color:var(--ink-soft);font-weight:600;font-size:.82rem;}
 .product .price{margin-top:auto;padding-top:14px;display:flex;align-items:center;justify-content:space-between;}
 .product .price .amt{font-family:'Fraunces',serif;color:var(--accent-deep);font-size:1.1rem;}
 
+/* Partners / logo gallery */
+.partner-feature{border:1px solid var(--line);background:var(--paper-raised);overflow:hidden;}
+.partner-feature img{width:100%;height:auto;display:block;}
+.partner-feature .cap{padding:18px 22px;border-top:1px solid var(--line);}
+.partner-feature .cap .l{display:block;font-size:.78rem;color:var(--accent-deep);margin-bottom:4px;}
+.logo-card{
+  border:1px solid var(--line);background:var(--paper-raised);
+  display:flex;flex-direction:column;align-items:center;text-align:center;padding:28px 22px;
+}
+.logo-card img{max-width:100%;max-height:150px;object-fit:contain;margin-bottom:16px;}
+.logo-card h3{font-size:1rem;margin-bottom:6px;}
+.logo-card p{font-size:.88rem;color:var(--ink-soft);margin-bottom:0;}
+
 /* Contact */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;}
 form.enquiry label{display:block;font-size:.85rem;color:var(--ink-soft);margin:14px 0 6px;}
@@ -184,7 +205,14 @@ footer.site a:hover{color:var(--accent);}
 }
 @media(max-width:560px){
   .grid.cols-3,.grid.cols-4,.grid.cols-2{grid-template-columns:1fr;}
-  nav.main{display:none;}
+  .nav-toggle{display:flex;}
+  nav.main{
+    display:none;position:absolute;top:100%;left:0;right:0;
+    background:var(--ink);border-bottom:1px solid var(--line-dark);
+    flex-direction:column;gap:0;padding:8px 0;
+  }
+  nav.main.open{display:flex;}
+  nav.main a{padding:12px 28px;border-bottom:1px solid var(--line-dark);}
+  header.site .wrap{position:relative;}
   footer.site .wrap{grid-template-columns:1fr;}
-    }
-   
+  }
