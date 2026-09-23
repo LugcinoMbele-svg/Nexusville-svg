@@ -56,6 +56,7 @@ img{
 
 a{
   color:inherit;
+  text-decoration:none;
 }
 
 button,
@@ -68,7 +69,9 @@ select{
 h1,
 h2,
 h3,
-h4{
+h4,
+h5,
+h6{
   font-family:'Manrope',sans-serif;
   font-weight:700;
   line-height:1.12;
@@ -101,7 +104,7 @@ p{
 }
 
 /* =========================================================
-   HEADER
+   HEADER & NAVIGATION
    ========================================================= */
 
 header.site{
@@ -156,8 +159,6 @@ header.site .wrap{
   text-transform:uppercase;
 }
 
-/* Navigation */
-
 nav.main{
   display:flex;
   align-items:center;
@@ -198,8 +199,7 @@ nav.main a.active::after{
   transform:scaleX(1);
 }
 
-/* Mobile menu */
-
+/* Mobile menu toggle */
 .nav-toggle{
   display:none;
   flex-direction:column;
@@ -235,7 +235,7 @@ nav.main a.active::after{
 }
 
 /* =========================================================
-   HERO
+   HERO SECTION
    ========================================================= */
 
 .hero{
@@ -250,8 +250,6 @@ nav.main a.active::after{
   border-bottom:1px solid rgba(255,255,255,.08);
 }
 
-/* Architectural grid */
-
 .hero::before{
   content:"";
   position:absolute;
@@ -264,65 +262,6 @@ nav.main a.active::after{
   background-size:70px 70px;
   mask-image:linear-gradient(to bottom,black,transparent 85%);
   -webkit-mask-image:linear-gradient(to bottom,black,transparent 85%);
-}
-
-/* Building silhouettes */
-
-.hero::after{
-  content:"";
-  position:absolute;
-  z-index:-1;
-  left:0;
-  right:0;
-  bottom:0;
-  height:42%;
-  opacity:.5;
-  background:
-    linear-gradient(to top,rgba(4,11,20,.9),transparent),
-    repeating-linear-gradient(
-      90deg,
-      transparent 0 3%,
-      rgba(255,255,255,.06) 3% 5%,
-      transparent 5% 8%
-    );
-  clip-path:polygon(
-    0 38%,
-    5% 38%,
-    5% 17%,
-    10% 17%,
-    10% 46%,
-    15% 46%,
-    15% 5%,
-    21% 5%,
-    21% 30%,
-    26% 30%,
-    26% 12%,
-    33% 12%,
-    33% 42%,
-    39% 42%,
-    39% 0,
-    46% 0,
-    46% 33%,
-    52% 33%,
-    52% 19%,
-    58% 19%,
-    58% 43%,
-    64% 43%,
-    64% 10%,
-    71% 10%,
-    71% 32%,
-    78% 32%,
-    78% 3%,
-    85% 3%,
-    85% 41%,
-    91% 41%,
-    91% 15%,
-    96% 15%,
-    96% 34%,
-    100% 34%,
-    100% 100%,
-    0 100%
-  );
 }
 
 .hero-city{
@@ -360,4 +299,105 @@ nav.main a.active::after{
   font-weight:700;
   letter-spacing:.14em;
   text-transform:uppercase;
-  margin-bottom:18px
+  margin-bottom:18px;
+}
+
+/* =========================================================
+   CORPORATE SECTIONS & GRIDS
+   ========================================================= */
+
+section{
+  padding:90px 0;
+}
+
+section:nth-of-type(even){
+  background:var(--white);
+}
+
+.section-header{
+  margin-bottom:60px;
+}
+
+.section-header .eyebrow{
+  color:var(--blue);
+  font-size:.78rem;
+  font-weight:700;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  display:block;
+  margin-bottom:12px;
+}
+
+/* Card Grid Layouts */
+.grid-cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:30px;
+}
+
+.card{
+  background:var(--white);
+  border:1px solid var(--line);
+  padding:36px;
+  border-radius:12px;
+  box-shadow:var(--shadow-sm);
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+
+section:nth-of-type(even) .card{
+  background:var(--off-white);
+}
+
+.card:hover{
+  transform:translateY(-4px);
+  box-shadow:var(--shadow-md);
+}
+
+/* Footer Styling */
+footer.site{
+  background:var(--navy);
+  color:#B9C6D3;
+  padding:70px 0 35px;
+  border-top:1px solid var(--line-dark);
+}
+
+footer.site h4{
+  color:#fff;
+  font-size:1rem;
+  margin-bottom:20px;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:40px;
+  margin-bottom:50px;
+}
+
+.footer-bottom{
+  border-top:1px solid var(--line-dark);
+  padding-top:30px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:.85rem;
+  flex-wrap:wrap;
+  gap:20px;
+}
+
+/* Responsive Media Query Adjustments */
+@media(max-width:900px){
+  .hero-grid{
+    grid-template-columns:1fr;
+    gap:40px;
+  }
+  
+  nav.main{
+    display:none;
+  }
+
+  .nav-toggle{
+    display:flex;
+  }
+  }
+                    
