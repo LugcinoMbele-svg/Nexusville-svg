@@ -11,13 +11,16 @@
 <header class="site">
   <div class="wrap">
     <a class="brand" href="index.html">
-      <span class="mark">N</span>
+      <img class="logo-mark" src="images/nexusville-logo.png" alt="Nexusville logo">
       <span>
         <span class="word">Nexusville</span>
         <span class="tag">Building Sustainable Futures</span>
       </span>
     </a>
-    <nav class="main">
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="main" id="site-nav">
       <a href="index.html" class="active">Home</a>
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
@@ -30,9 +33,41 @@
   </div>
 </header>
 
-<section class="hero">
+<section class="hero hero-city">
+  <svg class="hero-skyline" viewBox="0 0 1200 340" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <g opacity="0.55" fill="#0E1830">
+    <rect x="0" y="180" width="60" height="160"/>
+    <rect x="70" y="130" width="50" height="210"/>
+    <rect x="130" y="200" width="45" height="140"/>
+    <rect x="185" y="90" width="55" height="250"/>
+    <rect x="250" y="160" width="40" height="180"/>
+    <rect x="300" y="60" width="60" height="280"/>
+    <rect x="370" y="150" width="48" height="190"/>
+    <rect x="430" y="110" width="42" height="230"/>
+    <rect x="480" y="190" width="55" height="150"/>
+    <rect x="545" y="40" width="65" height="300"/>
+    <rect x="620" y="140" width="45" height="200"/>
+    <rect x="675" y="95" width="50" height="245"/>
+    <rect x="735" y="175" width="42" height="165"/>
+    <rect x="785" y="70" width="58" height="270"/>
+    <rect x="855" y="160" width="46" height="180"/>
+    <rect x="910" y="115" width="52" height="225"/>
+    <rect x="970" y="200" width="40" height="140"/>
+    <rect x="1020" y="80" width="60" height="260"/>
+    <rect x="1090" y="150" width="48" height="190"/>
+    <rect x="1150" y="190" width="50" height="150"/>
+  </g>
+  <g fill="#B08D57" opacity="0.85">
+    <rect x="192" y="105" width="6" height="6"/><rect x="205" y="120" width="6" height="6"/><rect x="218" y="140" width="6" height="6"/>
+    <rect x="308" y="80" width="6" height="6"/><rect x="322" y="100" width="6" height="6"/><rect x="336" y="120" width="6" height="6"/><rect x="308" y="140" width="6" height="6"/>
+    <rect x="553" y="60" width="6" height="6"/><rect x="567" y="80" width="6" height="6"/><rect x="581" y="100" width="6" height="6"/><rect x="595" y="120" width="6" height="6"/>
+    <rect x="793" y="90" width="6" height="6"/><rect x="807" y="110" width="6" height="6"/><rect x="821" y="130" width="6" height="6"/>
+    <rect x="1028" y="100" width="6" height="6"/><rect x="1042" y="120" width="6" height="6"/><rect x="1056" y="140" width="6" height="6"/>
+  </g>
+</svg>
   <div class="wrap hero-grid">
     <div>
+      <img class="hero-logo" src="images/nexusville-logo.png" alt="Nexusville logo">
       <div class="eyebrow">National Vision &middot; 2026&ndash;2041</div>
       <h1>Building sustainable futures, one integrated community at a time.</h1>
       <p class="lead">Nexusville designs, finances, develops and operates complete economic ecosystems &mdash; where housing, agriculture, energy, healthcare, education and enterprise grow together.</p>
@@ -114,9 +149,10 @@
     </div>
   </div>
   <div class="wrap footer-bottom">
-    &copy; 2026 Nexusville (Pty) Ltd. Reg. No. 2026/260391/07. All rights reserved.
+    &copy; <span data-year>2026</span> Nexusville (Pty) Ltd. Reg. No. 2026/260391/07. All rights reserved.
   </div>
 </footer>
+<script src="script.js" defer></script>
 </body>
     </html>
-    
+      
