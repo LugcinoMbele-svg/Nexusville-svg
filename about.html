@@ -11,13 +11,16 @@
 <header class="site">
   <div class="wrap">
     <a class="brand" href="index.html">
-      <span class="mark">N</span>
+      <img class="logo-mark" src="images/nexusville-logo.png" alt="Nexusville logo">
       <span>
         <span class="word">Nexusville</span>
         <span class="tag">Building Sustainable Futures</span>
       </span>
     </a>
-    <nav class="main">
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="main" id="site-nav">
       <a href="index.html">Home</a>
       <a href="about.html" class="active">About</a>
       <a href="services.html">Services</a>
@@ -117,9 +120,10 @@
     </div>
   </div>
   <div class="wrap footer-bottom">
-    &copy; 2026 Nexusville (Pty) Ltd. Reg. No. 2026/260391/07. All rights reserved.
+    &copy; <span data-year>2026</span> Nexusville (Pty) Ltd. Reg. No. 2026/260391/07. All rights reserved.
   </div>
 </footer>
+<script src="script.js" defer></script>
 </body>
-      </html>
-  
+  </html>
+        
