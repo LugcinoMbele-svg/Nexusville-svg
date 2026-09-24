@@ -6,6 +6,24 @@
 <title>About | Nexusville</title>
 <meta name="description" content="Company background, vision, mission and competitive advantage for Nexusville (Pty) Ltd.">
 <link rel="stylesheet" href="style.css">
+  <style>
+/* Dropdown menu on every screen size */
+.nav-toggle{display:flex;}
+header.site .wrap{position:relative;}
+nav.main{
+  display:none;position:absolute;top:100%;right:28px;min-width:240px;
+  flex-direction:column;flex-wrap:nowrap;gap:0;padding:6px 0;
+  background:var(--ink);border:1px solid var(--line-dark);border-top:2px solid var(--accent);
+  box-shadow:0 14px 28px rgba(0,0,0,.35);
+}
+nav.main.open{display:flex;}
+nav.main a{padding:12px 22px;border-bottom:1px solid var(--line-dark);}
+nav.main a:last-child{border-bottom:0;}
+@media(max-width:560px){
+  nav.main{left:0;right:0;min-width:0;border-left:0;border-right:0;}
+  nav.main a{padding:12px 28px;}
+}
+  </style>
 </head>
 <body>
 <header class="site">
