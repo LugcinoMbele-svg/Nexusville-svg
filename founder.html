@@ -3,27 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Founder | Nexusville</title>
+<title>Founder | Nexusville - Building Sustainable Futures</title>
 <meta name="description" content="Lugcino Ntsuzi, Founder and Chief Executive Officer of Nexusville (Pty) Ltd.">
+<link rel="icon" href="images/nexusville-logo.png">
 <link rel="stylesheet" href="style.css">
-  <style>
-/* Dropdown menu on every screen size */
-.nav-toggle{display:flex;}
-header.site .wrap{position:relative;}
-nav.main{
-  display:none;position:absolute;top:100%;right:28px;min-width:240px;
-  flex-direction:column;flex-wrap:nowrap;gap:0;padding:6px 0;
-  background:var(--ink);border:1px solid var(--line-dark);border-top:2px solid var(--accent);
-  box-shadow:0 14px 28px rgba(0,0,0,.35);
-}
-nav.main.open{display:flex;}
-nav.main a{padding:12px 22px;border-bottom:1px solid var(--line-dark);}
-nav.main a:last-child{border-bottom:0;}
-@media(max-width:560px){
-  nav.main{left:0;right:0;min-width:0;border-left:0;border-right:0;}
-  nav.main a{padding:12px 28px;}
-}
-  </style>
 </head>
 <body>
 <header class="site">
@@ -35,7 +18,7 @@ nav.main a:last-child{border-bottom:0;}
         <span class="tag">Building Sustainable Futures</span>
       </span>
     </a>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-nav">
       <span></span><span></span><span></span>
     </button>
     <nav class="main" id="site-nav">
@@ -43,32 +26,26 @@ nav.main a:last-child{border-bottom:0;}
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
       <a href="programs.html">Programs</a>
+      <a href="construction.html">Construction</a>
+      <a href="business-solutions.html">Business Solutions</a>
       <a href="partners.html">Partners</a>
-      <a href="founder.html" class="active">Founder</a>
-      <a href="literature.html">Literature</a>
-      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="btn-nav">Contact</a>
     </nav>
   </div>
 </header>
-
-<section class="hero" style="padding:64px 0 56px;">
+<section class="hero">
   <div class="wrap">
     <div class="eyebrow">Leadership</div>
-    <h1 style="max-width:20ch;">Founder &amp; Chief Executive Officer</h1>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="founder-photo-slot">
-      <span class="ph-icon">&#128247;</span>
-      <span>lugcino-ntsuzi.jpg</span>
-    </div>
+    <h1>Founder &amp; Chief Executive Officer</h1>
+    <p class="lead"></p>
   </div>
 </section>
 
 <section class="tight">
   <div class="wrap founder-grid">
+    <div class="founder-photo">
+      <img src="lugcino-ntsuzi.jpg" alt="Lugcino Ntsuzi, Founder and CEO of Nexusville">
+    </div>
     <div>
       <h2>Lugcino Ntsuzi</h2>
       <p style="color:var(--accent-deep);margin-bottom:20px;">Founder &amp; Chief Executive Officer, Nexusville (Pty) Ltd</p>
@@ -76,7 +53,7 @@ nav.main a:last-child{border-bottom:0;}
       <p>Under this leadership, Nexusville's model balances commercial viability with measurable social and environmental impact, guiding the company through its Phase One mandate: proving the integrated development approach at Nexusville Green Village before scaling nationally.</p>
       <ul class="contact-list" style="margin-top:24px;">
         <li><span class="l">Email</span>Lugcino@nexusville.co.za</li>
-        <li><span class="l">Email</span>lugcino@nomduva.org.za</li>
+        <li><span class="l">Email</span>info@nexusville.co.za</li>
         <li><span class="l">Phone</span>+27 60 471 6302</li>
       </ul>
       <a class="btn dark" href="contact.html">Contact the founder</a>
@@ -86,14 +63,19 @@ nav.main a:last-child{border-bottom:0;}
 <footer class="site">
   <div class="wrap">
     <div>
-      <h4>Nexusville (Pty) Ltd</h4>
-      <p style="color:#A9B2C2;font-size:.9rem;max-width:38ch;">A South African infrastructure and property development company building integrated, self-sustaining communities across twelve economic pillars.</p>
+      <div class="brand" style="margin-bottom:14px;">
+        <img class="logo-mark" src="images/nexusville-logo.png" alt="Nexusville logo">
+        <span><span class="word" style="color:#fff;">Nexusville</span><span class="tag">Building Sustainable Futures</span></span>
+      </div>
+      <p style="color:#9DB2D0;font-size:.9rem;max-width:38ch;">A South African infrastructure and property development company building integrated, self-sustaining communities across twelve economic pillars.</p>
     </div>
     <div>
       <h4>Site</h4>
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
       <a href="programs.html">Programs</a>
+      <a href="construction.html">Construction</a>
+      <a href="business-solutions.html">Business Solutions</a>
       <a href="partners.html">Partners</a>
     </div>
     <div>
@@ -109,4 +91,5 @@ nav.main a:last-child{border-bottom:0;}
 </footer>
 <script src="script.js" defer></script>
 </body>
-</html>
+                                                                 </html>
+                   
