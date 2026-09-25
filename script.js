@@ -1,10 +1,56 @@
 // Nexusville site scripts
 
+// The uploaded assets are stored in the repository root. Older page markup
+// references images/<filename>, so normalize those URLs before the browser
+// tries to request them. This keeps the existing pages compatible with GitHub
+// Pages and the nexusville.co.za custom domain.
+(function () {
+  var assetNames = {
+    'nexusville-logo.png': 'Nexusville-logo.png',
+    'Nexusville-logo.png': 'Nexusville-logo.png',
+    'nexusville-group-companies.jpg': 'nexusville-group-companies.jpg',
+    'nexusville-nyadf-partnership.jpg': 'nexusville-nyadf-partnership.jpg',
+    'nexusville-business-solutions.png': 'nexusville-business-solutions.png',
+    'nyadf-logo.png': 'nyadf-logo.png',
+    'nomduva-logo.jpg': 'nomduva-logo.jpg',
+    'thirsty-partner.jpg': 'thirsty-partner.jpg'
+  };
+
+  function normalizeAsset(element, attribute) {
+    var value = element.getAttribute(attribute);
+    if (!value || value.indexOf('images/') !== 0) return;
+
+    var fileName = value.slice('images/'.length);
+    var assetName = assetNames[fileName];
+    if (assetName) element.setAttribute(attribute, '/' + assetName);
+  }
+
+  document.querySelectorAll('img[src]').forEach(function (image) {
+    normalizeAsset(image, 'src');
+    image.addEventListener('error', function () {
+      var fileName = image.src.split('/').pop();
+      var assetName = assetNames[fileName];
+      if (assetName && image.src !== new URL('/' + assetName, window.location.origin).href) {
+        image.src = '/' + assetName;
+      }
+    });
+  });
+
+  document.querySelectorAll('link[href]').forEach(function (link) {
+    normalizeAsset(link, 'href');
+  });
+})();
+
 // Mobile navigation toggle
 (function () {
   var toggle = document.querySelector('.nav-toggle');
   var nav = document.getElementById('site-nav');
   if (!toggle || !nav) return;
+
+  function closeNav() {
+    nav.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
 
   toggle.addEventListener('click', function () {
     var isOpen = nav.classList.toggle('open');
@@ -12,10 +58,11 @@
   });
 
   nav.querySelectorAll('a').forEach(function (link) {
-    link.addEventListener('click', function () {
-      nav.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
-    });
+    link.addEventListener('click', closeNav);
+  });
+
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') closeNav();
   });
 })();
 
@@ -30,60 +77,61 @@
   var nextBtn = slider.querySelector('.slider-btn.next');
   if (!slides.length) return;
 
-  var current = Math.max(0, slides.findIndex(function (s) { return s.classList.contains('active'); }));
-  if (current < 0) current = 0;
+  var activeIndex = slides.findIndex(function (slide) {
+    return slide.classList.contains('active');
+  });
+  var current = activeIndex >= 0 ? activeIndex : 0;
   var timer = null;
   var DURATION = 6000;
+  var dots = [];
 
-  // Build dots
-  var dots = slides.map(function (_, i) {
-    var b = document.createElement('button');
-    b.type = 'button';
-    b.setAttribute('aria-label', 'Go to slide ' + (i + 1));
-    if (i === current) b.classList.add('active');
-    b.addEventListener('click', function () { goTo(i); restart(); });
-    dotsWrap.appendChild(b);
-    return b;
-  });
+  if (dotsWrap) {
+    dots = slides.map(function (_, i) {
+      var button = document.createElement('button');
+      button.type = 'button';
+      button.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+      button.addEventListener('click', function () { show(i); restart(); });
+      dotsWrap.appendChild(button);
+      return button;
+    });
+  }
 
   function show(index) {
     slides[current].classList.remove('active');
-    dots[current].classList.remove('active');
+    if (dots[current]) dots[current].classList.remove('active');
     current = (index + slides.length) % slides.length;
     slides[current].classList.add('active');
-    dots[current].classList.add('active');
+    if (dots[current]) dots[current].classList.add('active');
   }
 
-  function goTo(i) { show(i); }
   function next() { show(current + 1); }
   function prev() { show(current - 1); }
 
   function restart() {
-    if (timer) clearInterval(timer);
-    timer = setInterval(next, DURATION);
+    if (timer) window.clearInterval(timer);
+    timer = window.setInterval(next, DURATION);
   }
 
+  if (dots[current]) dots[current].classList.add('active');
   if (nextBtn) nextBtn.addEventListener('click', function () { next(); restart(); });
   if (prevBtn) prevBtn.addEventListener('click', function () { prev(); restart(); });
-
   restart();
 })();
 
-// Contact / enquiry forms: let the visitor know their email client is opening
+// Contact / enquiry forms
 (function () {
   var form = document.querySelector('form.enquiry');
   if (!form) return;
 
   form.addEventListener('submit', function () {
     var btn = form.querySelector('button[type="submit"]');
-    if (btn) {
-      btn.textContent = 'Opening your email client\u2026';
-      btn.disabled = true;
-      setTimeout(function () {
-        btn.textContent = 'Send enquiry';
-        btn.disabled = false;
-      }, 4000);
-    }
+    if (!btn) return;
+    btn.textContent = 'Opening your email client\u2026';
+    btn.disabled = true;
+    window.setTimeout(function () {
+      btn.textContent = 'Send enquiry';
+      btn.disabled = false;
+    }, 4000);
   });
 })();
 
@@ -93,4 +141,3 @@
     el.textContent = new Date().getFullYear();
   });
 })();
-  
