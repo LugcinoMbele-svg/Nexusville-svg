@@ -3,27 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>About | Nexusville</title>
+<title>About | Nexusville - Building Sustainable Futures</title>
 <meta name="description" content="Company background, vision, mission and competitive advantage for Nexusville (Pty) Ltd.">
+<link rel="icon" href="images/nexusville-logo.png">
 <link rel="stylesheet" href="style.css">
-  <style>
-/* Dropdown menu on every screen size */
-.nav-toggle{display:flex;}
-header.site .wrap{position:relative;}
-nav.main{
-  display:none;position:absolute;top:100%;right:28px;min-width:240px;
-  flex-direction:column;flex-wrap:nowrap;gap:0;padding:6px 0;
-  background:var(--ink);border:1px solid var(--line-dark);border-top:2px solid var(--accent);
-  box-shadow:0 14px 28px rgba(0,0,0,.35);
-}
-nav.main.open{display:flex;}
-nav.main a{padding:12px 22px;border-bottom:1px solid var(--line-dark);}
-nav.main a:last-child{border-bottom:0;}
-@media(max-width:560px){
-  nav.main{left:0;right:0;min-width:0;border-left:0;border-right:0;}
-  nav.main a{padding:12px 28px;}
-}
-  </style>
 </head>
 <body>
 <header class="site">
@@ -35,7 +18,7 @@ nav.main a:last-child{border-bottom:0;}
         <span class="tag">Building Sustainable Futures</span>
       </span>
     </a>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-nav">
       <span></span><span></span><span></span>
     </button>
     <nav class="main" id="site-nav">
@@ -43,18 +26,17 @@ nav.main a:last-child{border-bottom:0;}
       <a href="about.html" class="active">About</a>
       <a href="services.html">Services</a>
       <a href="programs.html">Programs</a>
+      <a href="construction.html">Construction</a>
+      <a href="business-solutions.html">Business Solutions</a>
       <a href="partners.html">Partners</a>
-      <a href="founder.html">Founder</a>
-      <a href="literature.html">Literature</a>
-      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="btn-nav">Contact</a>
     </nav>
   </div>
 </header>
-
-<section class="hero" style="padding:64px 0 56px;">
+<section class="hero">
   <div class="wrap">
     <div class="eyebrow">About Nexusville</div>
-    <h1 style="max-width:20ch;">A national development platform, not just a property developer.</h1>
+    <h1>A national development platform, not just a property developer.</h1>
     <p class="lead">Established to meet South Africa's need for sustainable housing, resilient infrastructure and inclusive economic growth.</p>
   </div>
 </section>
@@ -89,11 +71,11 @@ nav.main a:last-child{border-bottom:0;}
       <h2>What we're building toward</h2>
     </div>
     <div class="grid cols-2">
-      <div class="card">
+      <div class="card plain">
         <h3>Our vision</h3>
         <p>To become Africa's leading infrastructure and integrated property development company &mdash; transforming communities through world-class sustainable developments that improve lives and create lasting prosperity.</p>
       </div>
-      <div class="card">
+      <div class="card plain">
         <h3>Our mission</h3>
         <p>To plan, develop, own and operate sustainable communities that combine quality infrastructure, affordable housing, economic opportunity and innovative technology, delivering long-term value to residents, investors and government alike.</p>
       </div>
@@ -120,14 +102,19 @@ nav.main a:last-child{border-bottom:0;}
 <footer class="site">
   <div class="wrap">
     <div>
-      <h4>Nexusville (Pty) Ltd</h4>
-      <p style="color:#A9B2C2;font-size:.9rem;max-width:38ch;">A South African infrastructure and property development company building integrated, self-sustaining communities across twelve economic pillars.</p>
+      <div class="brand" style="margin-bottom:14px;">
+        <img class="logo-mark" src="images/nexusville-logo.png" alt="Nexusville logo">
+        <span><span class="word" style="color:#fff;">Nexusville</span><span class="tag">Building Sustainable Futures</span></span>
+      </div>
+      <p style="color:#9DB2D0;font-size:.9rem;max-width:38ch;">A South African infrastructure and property development company building integrated, self-sustaining communities across twelve economic pillars.</p>
     </div>
     <div>
       <h4>Site</h4>
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
       <a href="programs.html">Programs</a>
+      <a href="construction.html">Construction</a>
+      <a href="business-solutions.html">Business Solutions</a>
       <a href="partners.html">Partners</a>
     </div>
     <div>
@@ -143,5 +130,5 @@ nav.main a:last-child{border-bottom:0;}
 </footer>
 <script src="script.js" defer></script>
 </body>
-  </html>
-        
+      </html>
+  
