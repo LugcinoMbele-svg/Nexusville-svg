@@ -1,13 +1,8 @@
 // Nexusville site scripts
 
-// The uploaded assets are stored in the repository root. Older page markup
-// references images/<filename>, so normalize those URLs before the browser
-// tries to request them. This keeps the existing pages compatible with GitHub
-// Pages and the nexusville.co.za custom domain.
 (function () {
   var assetNames = {
-    'nexusville-logo.png': 'Nexusville-logo.png',
-    'Nexusville-logo.png': 'Nexusville-logo.png',
+    'nexusville-logo.png': 'nexusville-logo.png',
     'nexusville-group-companies.jpg': 'nexusville-group-companies.jpg',
     'nexusville-nyadf-partnership.jpg': 'nexusville-nyadf-partnership.jpg',
     'nexusville-business-solutions.png': 'nexusville-business-solutions.png',
@@ -16,28 +11,15 @@
     'thirsty-partner.jpg': 'thirsty-partner.jpg'
   };
 
-  function normalizeAsset(element, attribute) {
-    var value = element.getAttribute(attribute);
-    if (!value || value.indexOf('images/') !== 0) return;
-
-    var fileName = value.slice('images/'.length);
-    var assetName = assetNames[fileName];
-    if (assetName) element.setAttribute(attribute, '/' + assetName);
-  }
-
   document.querySelectorAll('img[src]').forEach(function (image) {
-    normalizeAsset(image, 'src');
-    image.addEventListener('error', function () {
+    image.addEventListener('error', function handleImageError() {
       var fileName = image.src.split('/').pop();
       var assetName = assetNames[fileName];
-      if (assetName && image.src !== new URL('/' + assetName, window.location.origin).href) {
+      if (assetName && !image.dataset.fallbackTried) {
+        image.dataset.fallbackTried = 'true';
         image.src = '/' + assetName;
       }
-    });
-  });
-
-  document.querySelectorAll('link[href]').forEach(function (link) {
-    normalizeAsset(link, 'href');
+    }, { once: true });
   });
 })();
 
@@ -118,26 +100,10 @@
   restart();
 })();
 
-// Contact / enquiry forms
-(function () {
-  var form = document.querySelector('form.enquiry');
-  if (!form) return;
-
-  form.addEventListener('submit', function () {
-    var btn = form.querySelector('button[type="submit"]');
-    if (!btn) return;
-    btn.textContent = 'Opening your email client\u2026';
-    btn.disabled = true;
-    window.setTimeout(function () {
-      btn.textContent = 'Send enquiry';
-      btn.disabled = false;
-    }, 4000);
-  });
-})();
-
 // Footer year stays current automatically
 (function () {
   document.querySelectorAll('[data-year]').forEach(function (el) {
     el.textContent = new Date().getFullYear();
   });
 })();
+                      
