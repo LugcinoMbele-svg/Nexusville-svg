@@ -504,3 +504,52 @@ section.alt p.note{background:#fff;}
     flex: 1;
   }
                    }
+/* Nexusville product details dialog */
+
+.nv-product-dialog {
+  width: min(90%, 560px);
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 0;
+  color: #f5f5f5;
+  background: #20231e;
+  border: 1px solid #55594e;
+  border-radius: 16px;
+}
+
+.nv-product-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.78);
+}
+
+.nv-product-dialog-content {
+  padding: 28px;
+}
+
+.nv-product-dialog-content h2 {
+  margin: 15px 0;
+  line-height: 1.35;
+}
+
+.nv-product-dialog-content p,
+.nv-product-dialog-content li {
+  line-height: 1.8;
+  color: #d4d6cf;
+}
+
+.nv-product-dialog-content li {
+  margin-bottom: 8px;
+}
+
+.nv-dialog-close {
+  float: right;
+  padding: 8px 12px;
+  color: #fff;
+  background: transparent;
+  border: 1px solid #666b60;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.nv-dialog-close:hover {
+  border-color: #ffcf24;
+     }
