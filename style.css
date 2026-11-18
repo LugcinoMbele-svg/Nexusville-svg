@@ -553,3 +553,291 @@ section.alt p.note{background:#fff;}
 .nv-dialog-close:hover {
   border-color: #ffcf24;
      }
+
+
+/* =========================================================
+   NEXUSVILLE GROUP — VISUAL REFRESH
+   Black / charcoal / refined gold corporate design system
+   Additive overrides: preserve existing page structures and JS.
+   ========================================================= */
+:root{
+  color-scheme: light;
+  --ink:#171717;
+  --ink-soft:#55524b;
+  --night:#090909;
+  --paper:#fff;
+  --paper-soft:#f7f5f0;
+  --paper-alt:#efede7;
+  --gold:#c5a15a;
+  --gold-bright:#e2c783;
+  --gold-deep:#94743a;
+  --line:#e7e1d5;
+  --line-strong:#d5c9b2;
+  --on-dark:#d7d2c7;
+  --surface-dark:#141414;
+  --shadow-soft:0 12px 34px rgba(20,16,8,.08);
+  --shadow-deep:0 22px 55px rgba(0,0,0,.22);
+}
+body{
+  background:var(--paper);
+  color:var(--ink-soft);
+  font-family:Inter,Arial,sans-serif;
+  letter-spacing:.005em;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{
+  color:var(--ink);
+  font-family:Inter,Arial,sans-serif;
+  letter-spacing:-.035em;
+}
+h1{font-weight:700;letter-spacing:-.045em;}
+h2{font-weight:650;letter-spacing:-.04em;}
+p{line-height:1.75;}
+a{transition:color .2s ease,background-color .2s ease,border-color .2s ease,transform .2s ease;}
+::selection{background:var(--gold);color:#111;}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:4px;}
+.wrap{max-width:1240px;padding-left:clamp(20px,4vw,42px);padding-right:clamp(20px,4vw,42px);}
+
+/* Navigation */
+header.site{
+  background:rgba(9,9,9,.96);
+  border-bottom:1px solid rgba(197,161,90,.28);
+  box-shadow:0 8px 30px rgba(0,0,0,.12);
+}
+header.site .wrap{min-height:82px;padding-top:10px;padding-bottom:10px;}
+header.site .brand{min-width:120px;}
+header.site .logo-mark{height:62px;filter:drop-shadow(0 2px 8px rgba(197,161,90,.12));}
+nav.main{gap:clamp(9px,1.35vw,19px);}
+nav.main a{
+  color:#e6e0d4;
+  font-size:.79rem;
+  font-weight:600;
+  letter-spacing:.015em;
+  padding:9px 0;
+}
+nav.main a:hover,nav.main a.active{color:var(--gold-bright);border-bottom-color:var(--gold);}
+.btn-nav{
+  background:var(--gold)!important;
+  border:1px solid var(--gold)!important;
+  border-radius:3px;
+  color:#111!important;
+  padding:11px 18px!important;
+  letter-spacing:.02em;
+}
+.btn-nav:hover{background:var(--gold-bright)!important;color:#111!important;}
+.nav-toggle span{background:var(--gold-bright);}
+@media(max-width:900px){
+  nav.main{background:#101010;border-bottom:1px solid rgba(197,161,90,.3);}
+  nav.main a{color:#eee8dc;padding:15px 24px;}
+  nav.main a:hover,nav.main a.active{color:var(--gold-bright);background:#1b1b1b;}
+}
+
+/* Homepage and page heroes */
+.hero-slider{
+  min-height:590px;
+  height:min(78vh,820px);
+  background:#090909;
+}
+.slide img{filter:brightness(.76) saturate(.78);}
+.slide::after{
+  background:linear-gradient(90deg,rgba(5,5,5,.91) 0%,rgba(5,5,5,.72) 48%,rgba(5,5,5,.12) 100%);
+}
+.slide-content{max-width:1240px;padding-left:clamp(24px,6vw,76px);padding-right:clamp(24px,6vw,76px);}
+.slide-content .eyebrow,.hero .eyebrow{
+  color:var(--gold-bright);
+  letter-spacing:.17em;
+  font-size:.76rem;
+}
+.slide-content h1{
+  max-width:15ch;
+  font-size:clamp(2.7rem,6vw,5.2rem);
+  line-height:1.02;
+  font-weight:700;
+  letter-spacing:-.055em;
+}
+.slide-content p{max-width:52ch;color:#e2ded5;font-size:clamp(1rem,1.5vw,1.2rem);}
+.hero{
+  background:linear-gradient(120deg,#101010 0%,#1d1b17 100%);
+  border-bottom:1px solid rgba(197,161,90,.3);
+}
+.hero .wrap{padding-top:clamp(64px,9vw,112px);padding-bottom:clamp(64px,9vw,112px);}
+.hero h1,.hero p.lead{color:#fff;}
+.hero p.lead{color:#d7d2c7;}
+.hero .eyebrow{color:var(--gold-bright);}
+.hero-logo{filter:drop-shadow(0 4px 14px rgba(197,161,90,.14));}
+
+/* Section rhythm */
+section{padding:clamp(56px,7vw,92px) 0;}
+section.alt{
+  background:var(--paper-soft);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.section-head{max-width:760px;margin-bottom:42px;}
+.section-head h2{font-size:clamp(1.9rem,3.5vw,3rem);line-height:1.12;}
+.kicker{color:var(--gold-deep);font-size:.73rem;letter-spacing:.16em;font-weight:800;}
+.partners-strip{background:#fbfaf7;border-color:var(--line);}
+.partners-strip .logos-track img{
+  max-height:62px;
+  border:1px solid var(--line);
+  border-radius:3px;
+  box-shadow:0 4px 15px rgba(0,0,0,.035);
+}
+
+/* Cards, pillars and grids */
+.grid{gap:24px;}
+.card,.pillar,.product,.partner-feature,.logo-card{
+  border:1px solid var(--line);
+  border-radius:5px;
+  box-shadow:0 5px 18px rgba(0,0,0,.035);
+}
+.card{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;}
+.card:hover,.product:hover{
+  transform:translateY(-4px);
+  border-color:var(--gold);
+  box-shadow:var(--shadow-soft);
+}
+.card img{height:clamp(190px,22vw,260px);}
+.card-body{padding:clamp(20px,2.5vw,30px);}
+.card-body h3{font-size:1.25rem;}
+.pillar{
+  border-top:2px solid var(--gold);
+  padding:24px 21px;
+  background:#fff;
+  box-shadow:none;
+}
+.pillar:hover{border-color:var(--gold-deep);box-shadow:var(--shadow-soft);transform:translateY(-3px);}
+.pillar .num{color:var(--gold-deep);font-family:Inter,Arial,sans-serif;font-weight:800;letter-spacing:.1em;}
+.pillar h3{font-size:1.02rem;letter-spacing:-.02em;}
+.pillar p{font-size:.88rem;line-height:1.65;}
+.card.plain{padding:clamp(22px,3vw,34px);}
+
+/* Buttons and links */
+.btn{
+  border-radius:3px;
+  padding:13px 22px;
+  font-size:.86rem;
+  font-weight:700;
+  letter-spacing:.025em;
+}
+.btn.primary{
+  color:#111;
+  background:var(--gold);
+  border-color:var(--gold);
+}
+.btn.primary:hover{background:var(--gold-bright);border-color:var(--gold-bright);transform:translateY(-1px);}
+.btn.dark{
+  background:#111;
+  color:var(--gold-bright);
+  border:1px solid #111;
+}
+.btn.dark:hover{background:var(--gold);border-color:var(--gold);color:#111;}
+.btn.secondary,.btn.ghost{border-radius:3px;}
+.btn.secondary:hover,.btn.ghost:hover{background:#f5f0e6;border-color:var(--gold);}
+
+/* Tables and content blocks */
+table.data th{background:#f5f2eb;color:#28241c;}
+table.data th,table.data td{border-bottom:1px solid var(--line);}
+.phase{border-left:2px solid var(--gold);}
+.phase .years{color:var(--gold-deep);}
+p.note{background:#f7f3e9;border-left-color:var(--gold);border-radius:2px;}
+ul.list li::before{background:var(--gold);}
+ol.list.num li::before{background:#171717;color:var(--gold-bright);}
+
+/* Forms */
+form.enquiry input,form.enquiry textarea,form.enquiry select,
+#nv-product-search,#nv-category-filter{
+  border:1px solid #d8d0c0;
+  border-radius:3px;
+  background:#fff;
+  color:#171717;
+  min-height:48px;
+}
+form.enquiry input:focus,form.enquiry textarea:focus,form.enquiry select:focus,
+#nv-product-search:focus,#nv-category-filter:focus{
+  outline:2px solid var(--gold);
+  outline-offset:1px;
+}
+form.enquiry label{color:#34312b;font-weight:650;}
+
+/* Calls to action */
+.cta-light{
+  background:linear-gradient(110deg,#111 0%,#201d17 100%);
+  border-color:rgba(197,161,90,.35);
+}
+.cta-light h2{color:#fff;}
+.cta-light p{color:#d8d1c4;}
+.cta-light .btn.primary{flex-shrink:0;}
+
+/* Marketplace / BizFlow: same visual language, preserve controls */
+.nv-marketplace{
+  background:#0b0b0b;
+  color:#e9e4d9;
+  border-top:1px solid rgba(197,161,90,.25);
+}
+.nv-marketplace-heading h2,.nv-product-card h3{color:#fff;}
+.nv-marketplace-heading p,.nv-product-card p{color:#c9c2b5;}
+.nv-marketplace-label,.nv-product-category{color:var(--gold-bright);}
+.nv-marketplace-banner,.nv-product-card,.nv-marketplace-note{
+  background:#171614;
+  border-color:#393328;
+  border-radius:4px;
+}
+.nv-marketplace-button,.nv-product-button{
+  background:var(--gold);
+  color:#111;
+  border-radius:3px;
+}
+.nv-marketplace-button:hover,.nv-product-button:hover{background:var(--gold-bright);}
+.nv-marketplace-button.nv-button-outline{border-color:#766444;color:#eee8dc;}
+.nv-marketplace-button.nv-button-outline:hover{border-color:var(--gold);color:var(--gold-bright);}
+#nv-product-search,#nv-category-filter{
+  background:#171614;color:#fff;border-color:#514735;
+}
+#nv-product-search::placeholder{color:#aaa294;}
+.nv-product-card:hover{border-color:var(--gold);}
+.nv-product-price{color:var(--gold-bright);}
+.nv-marketplace-note{border-left-color:var(--gold);}
+
+/* Dialog */
+.nv-product-dialog{background:#171614;border:1px solid #766444;border-radius:5px;color:#f5f0e6;}
+.nv-product-dialog-content h2{color:#fff;}
+.nv-product-dialog-content p,.nv-product-dialog-content li{color:#d8d1c4;}
+.nv-dialog-close{border-radius:3px;border-color:#766444;}
+.nv-dialog-close:hover{border-color:var(--gold);color:var(--gold-bright);}
+
+/* Footer */
+footer.site{
+  background:#080808;
+  border-top:2px solid var(--gold-deep);
+  color:#d2ccbf;
+  padding-top:clamp(48px,6vw,76px);
+}
+footer.site .footer-title{color:#fff;letter-spacing:-.025em;}
+footer.site .footer-sub{color:var(--gold-bright);letter-spacing:.16em;}
+footer.site h4{color:var(--gold-bright);letter-spacing:.12em;}
+footer.site p,footer.site a,footer.site ul.creds li{color:#c5beb0;}
+footer.site a:hover,footer.site dl.facts dd a{color:var(--gold-bright);}
+footer.site dl.facts dt{color:#938b7c;}
+footer.site dl.facts dd,footer.site ul.creds strong{color:#f3eee4;}
+footer.site .footer-grid{border-top-color:#30291e;}
+footer.site .footer-bottom{border-top-color:#30291e;}
+footer.site .footer-bottom p{color:#a69e90;}
+
+/* Accessibility and reduced motion */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important;}
+}
+@media(max-width:900px){
+  .hero-slider{min-height:560px;}
+  .slide::after{background:linear-gradient(180deg,rgba(5,5,5,.58),rgba(5,5,5,.88));}
+  .slide-content h1{max-width:17ch;}
+}
+@media(max-width:560px){
+  .hero-slider{height:72vh;min-height:520px;}
+  .slide-content h1{font-size:clamp(2.35rem,11vw,3.4rem);}
+  .slide-content{padding-left:22px;padding-right:22px;}
+  .logos-track{gap:14px;}
+  .logos-track img{max-width:42%;height:48px;}
+  .cta-light .wrap{padding-top:42px;padding-bottom:42px;}
+}
