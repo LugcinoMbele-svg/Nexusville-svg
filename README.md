@@ -1,12 +1,38 @@
-NEXUSVILLE
+# Nexusville Group
 
-Building Sustainable Futures.
+**Building Sustainable Futures.**
 
-Nexusville (Pty) Ltd is a multidisciplinary development company focused on infrastructure development, sustainable development, renewable energy, ICT, technology, property development and innovative solutions.
+This repository contains the production static website for Nexusville Group, deployed from the repository root. The website uses HTML, CSS and vanilla JavaScript so it can be maintained without a Node.js build step.
 
-Nexusville aims to connect development, technology, sustainability and opportunity through an integrated development ecosystem.
+## Group structure
+
+- **Nexusville (Pty) Ltd** — infrastructure development, construction, property, renewable energy, agriculture, manufacturing, logistics and integrated development.
+- **Nexusville Developments (Pty) Ltd** — the group's ICT and digital solutions company. See [the ICT page](https://nexusville.co.za/nexusville-developments.html).
+- **Nexusville BizFlow** — preview catalogue for business and construction templates. Payments and paid downloads remain disabled until server-side checkout and delivery are configured.
+
+## Website pages
+
+- Home, About, Development Sectors, Programmes
+- Construction, Business Solutions, ICT & Digital
+- BizFlow Portal, Partners, Founder, Literature
+- Contact and legal / privacy notices
+
+## Development notes
+
+- Production entry point: `index.html`
+- Shared styling: `style.css`
+- Shared site behaviour: `script.js`
+- Product catalogue: `products.js`
+- BizFlow preview interface: `bizflow.html` and `construction-portal.js`
+- Portal configuration: `portal-config.js` (payments disabled by default)
+- Sitemap: `sitemap.xml`; crawler rules: `robots.txt`
+
+The former unused React/Vite application has been removed to avoid maintaining two competing website implementations. The static website is the single source of truth.
+
+**Important:** Contact forms prepare an email for the visitor to send. They do not submit to a server. BizFlow is a preview catalogue; do not enable payments until checkout, webhook verification, secure storage and access control are deployed and tested.
 
 ---
+
 
 🌍 About Nexusville
 
