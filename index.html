@@ -1,252 +1,109 @@
-```html
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<!doctype html>
+<html lang="en-ZA">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexusville (Pty) Ltd | Building Sustainable Futures</title>
-    <meta name="description" content="Nexusville (Pty) Ltd is a South African infrastructure development and integrated business solutions company committed to building sustainable futures.">
-    
-    <!-- Google Fonts: Plus Jakarta Sans & Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        emeraldDeep: '#0A2E22',
-                        emeraldRich: '#0D3B2C',
-                        slateNavy: '#0F172A',
-                        ivoryBg: '#F8FAFC',
-                        jadeAccent: '#059669',
-                        jadeBright: '#10B981',
-                        platinum: '#E2E8F0',
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        display: ['Plus Jakarta Sans', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-
-    <!-- Custom CSS Variables, Glassmorphism & Micro-Animations -->
-    <style>
-        :root {
-            --emerald-deep: #0A2E22;
-            --emerald-rich: #0D3B2C;
-            --slate-navy: #0F172A;
-            --ivory-bg: #F8FAFC;
-            --jade-accent: #059669;
-            --jade-bright: #10B981;
-            --platinum: #E2E8F0;
-        }
-
-        body {
-            background-color: var(--ivory-bg);
-            color: var(--slate-navy);
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3, h4, .font-display {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
-
-        /* Glassmorphism Navigation & Hero Stats */
-        .glass-nav {
-            background: rgba(10, 46, 34, 0.88);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .glass-card {
-            background: rgba(255, 255, 255, 0.07);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-            border: 1px solid rgba(255, 255, 255, 0.14);
-        }
-
-        /* Subtle Architectural Grid Pattern */
-        .arch-grid {
-            background-image: 
-                linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px);
-            background-size: 48px 48px;
-        }
-
-        .arch-grid-light {
-            background-image: 
-                linear-gradient(to right, rgba(15, 23, 42, 0.03) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
-            background-size: 48px 48px;
-        }
-
-        /* Sector Card Hover Elevation */
-        .sector-card {
-            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .sector-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 22px 45px -12px rgba(10, 46, 34, 0.16);
-            border-color: rgba(16, 185, 129, 0.55);
-        }
-
-        /* Scroll Reveal Animation */
-        .reveal {
-            opacity: 0;
-            transform: translateY(24px);
-            transition: opacity 0.75s ease-out, transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Modal Transitions */
-        .modal-backdrop {
-            transition: opacity 0.25s ease;
-        }
-        .modal-panel {
-            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nexusville (Pty) Ltd | Building Sustainable Futures</title>
+  <meta name="description" content="Nexusville (Pty) Ltd is a South African infrastructure and integrated development company advancing places, essential services and productive local economies.">
+  <meta name="theme-color" content="#071522">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Nexusville (Pty) Ltd | Building Sustainable Futures">
+  <meta property="og:description" content="Building the foundations for connected, resilient and sustainable communities.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=85">
+  <link rel="canonical" href="https://nexusville.co.za/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#071522;--ink2:#10283a;--blue:#8fc9e2;--blue2:#c9e8f4;--paper:#fff;--mist:#f3f8fb;--muted:#60717e;--line:#dce7ed;--max:1200px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:#fff;font-family:"DM Sans",sans-serif;line-height:1.65}a{color:inherit}img{display:block;max-width:100%}.wrap{width:min(var(--max),calc(100% - 48px));margin:auto}
+    .topline{height:4px;background:linear-gradient(90deg,#071522 0 60%,var(--blue) 60% 100%)}
+    header{position:absolute;top:4px;left:0;right:0;z-index:10;color:#fff;border-bottom:1px solid #ffffff30}
+    .nav{height:88px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .wordmark{text-decoration:none;display:inline-flex;flex-direction:column;line-height:1.05}.wordmark strong{font:800 1.24rem Manrope,sans-serif;letter-spacing:.13em}.wordmark span{font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--blue2);margin-top:8px}
+    nav{display:flex;align-items:center;gap:30px}nav a{text-decoration:none;font-size:.88rem;color:#e7f0f5;transition:color .2s}nav a:hover{color:var(--blue)}
+    .nav-cta,.button{display:inline-flex;align-items:center;justify-content:center;gap:12px;text-decoration:none;font-weight:700;border-radius:3px;transition:.2s}
+    .nav-cta{padding:12px 18px;border:1px solid #ffffff80;color:#fff;font-size:.85rem}.nav-cta:hover{background:#fff;color:var(--ink)}
+    .menu{display:none;background:none;border:1px solid #ffffff70;color:#fff;padding:9px 12px;font:inherit}
+    .hero{min-height:760px;position:relative;display:flex;align-items:center;background:#071522;color:#fff;overflow:hidden}
+    .hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 44%;opacity:.68}
+    .hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,17,28,.96) 0%,rgba(4,17,28,.82) 42%,rgba(4,17,28,.28) 100%),linear-gradient(0deg,rgba(4,17,28,.7),transparent 50%)}
+    .hero-grid{position:absolute;inset:0;opacity:.13;background-image:linear-gradient(#d7f1ff 1px,transparent 1px),linear-gradient(90deg,#d7f1ff 1px,transparent 1px);background-size:76px 76px;mask-image:linear-gradient(90deg,black,transparent 85%)}
+    .hero-content{position:relative;z-index:1;padding:175px 0 120px;max-width:760px}
+    .eyebrow{display:flex;align-items:center;gap:13px;color:var(--blue2);font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;margin-bottom:28px}.eyebrow:before{content:"";width:38px;height:1px;background:var(--blue)}
+    h1,h2,h3{font-family:Manrope,sans-serif;line-height:1.12;margin:0}h1{font-size:clamp(3rem,6.5vw,5.8rem);font-weight:600;letter-spacing:-.055em;max-width:850px}h1 em{font-style:normal;color:var(--blue)}
+    .hero p{font-size:1.12rem;line-height:1.8;color:#e0eaf0;max-width:610px;margin:27px 0 34px}
+    .actions{display:flex;flex-wrap:wrap;gap:14px}.button{padding:15px 22px;font-size:.9rem}.button.primary{background:var(--blue);color:#071522;border:1px solid var(--blue)}.button.primary:hover{background:#d2edf8;border-color:#d2edf8}.button.outline{border:1px solid #ffffff80;color:#fff}.button.outline:hover{background:#ffffff18}
+    .hero-index{position:absolute;right:max(24px,calc((100vw - var(--max))/2));bottom:44px;color:#ffffffa6;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;writing-mode:vertical-rl}
+    .intro{padding:105px 0 100px}.intro-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:90px;align-items:start}.section-label{color:#4d8eaa;font-size:.75rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin-bottom:18px}.intro h2,.section-head h2{font-size:clamp(2.1rem,4vw,3.5rem);font-weight:600;letter-spacing:-.045em}.intro-copy p{font-size:1.1rem;color:#536572;max-width:680px;margin:0 0 22px}.text-link{display:inline-flex;align-items:center;gap:12px;text-decoration:none;font-weight:700;border-bottom:1px solid var(--blue);padding:0 0 7px;margin-top:12px}.text-link span{color:#4d8eaa;font-size:1.2rem}
+    .pillars{padding:100px 0;background:var(--mist)}.section-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:48px}.section-head p{max-width:380px;color:var(--muted);margin:0}.pillar-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #cbdbe3;border-bottom:1px solid #cbdbe3}.pillar{padding:32px 25px 36px 0;min-height:265px;border-right:1px solid #cbdbe3;margin-right:25px}.pillar:last-child{border:0;margin:0}.pillar-no{font:600 .78rem Manrope;color:#5793ad;letter-spacing:.12em}.pillar-mark{width:42px;height:42px;margin:28px 0 22px;color:#4386a3}.pillar h3{font-size:1.2rem;margin-bottom:13px}.pillar p{font-size:.9rem;color:var(--muted);margin:0;max-width:245px}
+    .statement{background:var(--ink);color:#fff;padding:95px 0}.statement-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}.statement h2{font-size:clamp(2rem,4vw,3.4rem);font-weight:500;letter-spacing:-.04em}.statement p{color:#c2d0d9;max-width:520px;margin:0;font-size:1.02rem}.statement .section-label{color:var(--blue)}
+    .closing{padding:92px 0}.closing-inner{display:flex;justify-content:space-between;align-items:center;gap:40px}.closing h2{font-size:clamp(2rem,4vw,3.2rem);max-width:650px;letter-spacing:-.04em}.closing p{color:var(--muted);max-width:470px;margin:14px 0 0}
+    footer{background:#06111b;color:#fff;padding:35px 0}.footer-row{display:flex;align-items:center;justify-content:space-between;gap:25px}.footer-note{color:#aebdc7;font-size:.8rem}.footer-links{display:flex;gap:22px}.footer-links a{color:#d9e4ea;text-decoration:none;font-size:.8rem}.footer-links a:hover{color:var(--blue)}
+    @media(max-width:900px){.nav{height:76px}nav{display:none;position:absolute;top:76px;left:0;right:0;padding:22px 24px 26px;background:#071522;flex-direction:column;align-items:flex-start;gap:20px;border-bottom:1px solid #ffffff30}nav.open{display:flex}.nav-cta{display:none}.menu{display:block}.hero{min-height:700px}.intro-grid{grid-template-columns:1fr;gap:28px}.pillar-grid{grid-template-columns:repeat(2,1fr)}.pillar:nth-child(2){border-right:0;margin-right:0}.pillar:nth-child(3){border-top:1px solid #cbdbe3}.pillar:nth-child(4){border-top:1px solid #cbdbe3}.statement-grid{grid-template-columns:1fr;gap:25px}.closing-inner{align-items:flex-start;flex-direction:column}}
+    @media(max-width:560px){.wrap{width:min(var(--max),calc(100% - 36px))}.hero{min-height:690px}.hero-content{padding:145px 0 100px}h1{font-size:clamp(2.8rem,14vw,4.2rem)}.hero p{font-size:1rem}.intro,.pillars,.statement,.closing{padding:68px 0}.section-head{display:block}.section-head p{margin-top:18px}.pillar-grid{grid-template-columns:1fr}.pillar,.pillar:nth-child(2),.pillar:nth-child(3){border-right:0;border-bottom:1px solid #cbdbe3;border-top:0;margin:0;min-height:0;padding:28px 0}.pillar:last-child{border-bottom:0}.pillar-mark{margin:20px 0 15px}.footer-row{align-items:flex-start;flex-direction:column}.footer-links{flex-wrap:wrap}.hero-index{display:none}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+  </style>
 </head>
-<body class="antialiased selection:bg-jadeAccent selection:text-white">
-
-    <!-- 1. STICKY NAVIGATION BAR -->
-    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <!-- Custom Geometric SVG Logo -->
-                <a href="#home" class="flex items-center gap-3.5 group focus:outline-none">
-                    <div class="relative w-11 h-11 rounded-xl bg-gradient-to-br from-emeraldRich to-slateNavy border border-jadeBright/45 flex items-center justify-center shadow-lg group-hover:border-jadeBright transition-colors">
-                        <svg class="w-7 h-7" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Outer Architectural Hexagon Frame -->
-                            <path d="M18 3L31 10.5V25.5L18 33L5 25.5V10.5L18 3Z" stroke="#10B981" stroke-width="2" stroke-linejoin="round"/>
-                            <!-- Interlocking 'N' Structural Pillars -->
-                            <path d="M11.5 24.5V11.5L24.5 24.5V11.5" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-                            <!-- Sustainable Horizon Node -->
-                            <circle cx="18" cy="18" r="2.5" fill="#10B981"/>
-                        </svg>
-                    </div>
-                    <div class="flex flex-col">
-                        <span class="font-display font-extrabold text-xl tracking-tight text-white leading-none">
-                            NEXUSVILLE
-                        </span>
-                        <span class="text-[10px] font-semibold uppercase tracking-[0.22em] text-jadeBright mt-1">
-                            (Pty) Ltd • South Africa
-                        </span>
-                    </div>
-                </a>
-
-                <!-- Desktop Navigation Links -->
-                <nav class="hidden lg:flex items-center space-x-8">
-                    <a href="#home" class="text-sm font-medium text-platinum hover:text-jadeBright transition-colors">Home</a>
-                    <a href="#about" class="text-sm font-medium text-platinum hover:text-jadeBright transition-colors">About</a>
-                    <a href="#sectors" class="text-sm font-medium text-platinum hover:text-jadeBright transition-colors">Core Sectors</a>
-                    <a href="#impact" class="text-sm font-medium text-platinum hover:text-jadeBright transition-colors">Impact &amp; Vision</a>
-                    <a href="#contact" class="text-sm font-medium text-platinum hover:text-jadeBright transition-colors">Contact</a>
-                </nav>
-
-                <!-- Desktop CTA + Mobile Hamburger -->
-                <div class="flex items-center gap-4">
-                    <a href="#contact" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-jadeAccent to-jadeBright text-white font-display font-bold text-sm shadow-md hover:shadow-jadeBright/25 hover:brightness-105 transition-all">
-                        <span>Partner With Us</span>
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
-                        </svg>
-                    </a>
-
-                    <!-- Mobile Menu Toggle Button -->
-                    <button id="mobile-menu-btn" type="button" aria-label="Toggle Menu" class="lg:hidden p-2.5 rounded-xl text-slate-200 hover:text-white hover:bg-white/10 focus:outline-none transition">
-                        <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
-                        </svg>
-                        <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
-                        </svg>
-                    </button>
-                </div>
-            </div>
+<body>
+  <div class="topline"></div>
+  <header>
+    <div class="wrap nav">
+      <a class="wordmark" href="#home" aria-label="Nexusville home"><strong>NEXUSVILLE</strong><span>(Pty) Ltd · South Africa</span></a>
+      <nav id="site-nav" aria-label="Main navigation">
+        <a href="#home">Home</a><a href="#about">Our Company</a><a href="#pillars">Our Pillars</a><a href="contact.html">Contact</a>
+      </nav>
+      <a class="nav-cta" href="contact.html">Start a Conversation <span aria-hidden="true">↗</span></a>
+      <button class="menu" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    </div>
+  </header>
+  <main>
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <img class="hero-photo" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2200&q=88" alt="Contemporary high-rise architecture viewed from below" fetchpriority="high">
+      <div class="hero-shade"></div><div class="hero-grid"></div>
+      <div class="wrap"><div class="hero-content">
+        <div class="eyebrow">South African development company</div>
+        <h1 id="hero-title">Building the foundations of <em>tomorrow.</em></h1>
+        <p>Nexusville is an infrastructure and integrated development company focused on creating connected places, strengthening essential systems and opening pathways for sustainable economic growth.</p>
+        <div class="actions"><a class="button primary" href="#about">Discover Nexusville <span aria-hidden="true">→</span></a><a class="button outline" href="contact.html">Enquire about a partnership <span aria-hidden="true">↗</span></a></div>
+      </div></div>
+      <div class="hero-index">Building Sustainable Futures · 01 / 04</div>
+    </section>
+    <section class="intro" id="about">
+      <div class="wrap intro-grid">
+        <div><div class="section-label">01 / Who we are</div><h2>Progress begins with the right foundations.</h2></div>
+        <div class="intro-copy">
+          <p>Nexusville (Pty) Ltd is a South African company advancing practical development opportunities across infrastructure, property, energy and productive local industries.</p>
+          <p>Our approach brings together places, services and enterprise — connecting development ambition with the foundations communities and businesses need to grow. We believe lasting progress is built through purposeful investment, responsible partnerships and solutions designed for the long term.</p>
+          <a class="text-link" href="contact.html">Connect with our team <span aria-hidden="true">↗</span></a>
         </div>
-
-        <!-- Responsive Mobile Navigation Drawer -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-emeraldDeep/98 border-t border-white/10 px-4 pt-3 pb-6 space-y-2 shadow-2xl">
-            <a href="#home" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-white hover:bg-white/10">Home</a>
-            <a href="#about" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-platinum hover:bg-white/10">About</a>
-            <a href="#sectors" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-platinum hover:bg-white/10">Core Sectors</a>
-            <a href="#impact" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-platinum hover:bg-white/10">Impact &amp; Vision</a>
-            <a href="#contact" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-platinum hover:bg-white/10">Contact</a>
-            <div class="pt-2">
-                <a href="#contact" class="mobile-nav-link flex items-center justify-center gap-2 w-full px-5 py-3.5 rounded-xl bg-gradient-to-r from-jadeAccent to-jadeBright text-white font-display font-bold text-sm">
-                    <span>Partner With Us</span>
-                </a>
-            </div>
+      </div>
+    </section>
+    <section class="pillars" id="pillars">
+      <div class="wrap">
+        <div class="section-head"><div><div class="section-label">02 / What we focus on</div><h2>Four pillars. One connected vision.</h2></div><p>Our core areas of focus are designed to work together — supporting resilient places, essential infrastructure and inclusive economic participation.</p></div>
+        <div class="pillar-grid">
+          <article class="pillar"><span class="pillar-no">01 — PLACE</span><svg class="pillar-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M6 40V19L24 7l18 12v21H6Z" stroke="currentColor" stroke-width="1.6"/><path d="M17 40V26h14v14M13 20h5m12 0h5" stroke="currentColor" stroke-width="1.6"/></svg><h3>Infrastructure &amp; Property</h3><p>Integrated property development, site infrastructure, access roads and the public-realm foundations that help places thrive.</p></article>
+          <article class="pillar"><span class="pillar-no">02 — ESSENTIALS</span><svg class="pillar-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M25 5 11 26h11l-2 17 17-24H25l0-14Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><h3>Energy &amp; Utilities</h3><p>Renewable energy opportunities and essential service systems that support reliable, efficient and sustainable development.</p></article>
+          <article class="pillar"><span class="pillar-no">03 — PRODUCTIVITY</span><svg class="pillar-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M7 40h34M11 40V22l13-8 13 8v18M18 40V29h12v11M24 6v8m-5-3 5 3 5-3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><h3>Agriculture &amp; Food Security</h3><p>Agro-processing, agricultural infrastructure and value-chain opportunities that strengthen local production and food systems.</p></article>
+          <article class="pillar"><span class="pillar-no">04 — ENTERPRISE</span><svg class="pillar-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="7" y="8" width="34" height="25" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M17 40h14m-7-7v7M14 17h20M14 23h12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><h3>Business Solutions</h3><p>Practical business support and enterprise development that help opportunities become structured, sustainable activity.</p></article>
         </div>
-    </header>
-
-    <!-- 2. HERO SECTION -->
-    <section id="home" class="relative min-h-screen flex flex-col justify-between pt-28 pb-10 bg-emeraldDeep overflow-hidden">
-        <!-- High-Resolution Infrastructure & Renewable Energy Backdrop -->
-        <div class="absolute inset-0 z-0">
-            <img 
-                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2070&q=80" 
-                onerror="this.src='https://placehold.co/1920x1080/0A2E22/10B981?text=Nexusville+Sustainable+Infrastructure'"
-                alt="Modern South African Architectural Infrastructure" 
-                class="w-full h-full object-cover object-center opacity-35 scale-105"
-            >
-            <!-- Rich Emerald & Slate Navy Architectural Gradient Overlay -->
-            <div class="absolute inset-0 bg-gradient-to-r from-emeraldDeep via-emeraldDeep/92 to-slateNavy/80"></div>
-            <div class="absolute inset-0 arch-grid"></div>
-        </div>
-
-        <!-- Hero Main Content -->
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-auto py-12 lg:py-16">
-            <div class="max-w-3xl">
-                <!-- Executive Tagline Pill -->
-                <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/10 border border-jadeBright/35 backdrop-blur-md mb-7">
-                    <span class="w-2 h-2 rounded-full bg-jadeBright animate-pulse"></span>
-                    <span class="text-xs sm:text-sm font-semibold tracking-wider uppercase text-jadeBright">
-                        South African Infrastructure &amp; Integrated Solutions
-                    </span>
-                </div>
-
-                <!-- Hero Headline -->
-                <h1 class="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-[1.1] mb-6">
-                    Building <span class="text-transparent bg-clip-text bg-gradient-to-r from-jadeBright via-emerald-300 to-platinum">Sustainable</span> Futures.
-                </h1>
-
-                <!-- Mission Subtitle -->
-                <p class="text-base sm:text-lg lg:text-xl text-platinum/90 leading-relaxed font-normal mb-9 max-w-2xl">
-                    Nexusville (Pty) Ltd pioneers catalytic infrastructure, clean energy, and integrated enterprise ecosystems across South Africa—unlocking economic opportunity, strengthening local industries, and driving inclusive national growth.
-                </p>
-
-                <!-- Hero Dual CTAs -->
-                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-                    <a href="#sectors" class="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl bg-gradient-to-r from-jadeAccent to-jadeBright text-white font-display font-bold text-base shadow-xl shadow-black/25 hover:brightness-105 transition-all">
-                        <span>Explore Our Sectors</span>
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
-                        </svg>
-                    </a>
-                    <a href="#contact" class="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl bg-white/10 hover:bg-white/15 text-white border border-platinum/30 font-display font-semibold text-base backdrop-blur-md transition-all">
-                        <span>Investor &amp; Partner Inquiry</span>
-                        <svg class="w-5 h-5 text-jadeBright" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Glassmorphic Bottom Strategic Pillars / Stats Bar -->
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mt-6">
-            <div class="glass-card rounded-2xl p-6 sm:p-7 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6
-```
+      </div>
+    </section>
+    <section class="statement">
+      <div class="wrap statement-grid"><div><div class="section-label">03 / Our philosophy</div><h2>Development that connects ambition with opportunity.</h2></div><p>We look beyond individual projects to understand how infrastructure, energy, land and enterprise can reinforce one another. Through collaboration and considered development, Nexusville aims to contribute to stronger local economies and a more sustainable future.</p></div>
+    </section>
+    <section class="closing">
+      <div class="wrap closing-inner"><div><div class="section-label">04 / Let’s build forward</div><h2>Good partnerships create the ground for lasting progress.</h2><p>For development opportunities, strategic partnerships and general enquiries, connect with Nexusville.</p></div><a class="button primary" href="contact.html">Contact Nexusville <span aria-hidden="true">↗</span></a></div>
+    </section>
+  </main>
+  <footer><div class="wrap footer-row"><a class="wordmark" href="#home"><strong>NEXUSVILLE</strong><span>(Pty) Ltd · South Africa</span></a><div class="footer-note">Building Sustainable Futures.</div><div class="footer-links"><a href="privacy-policy.html">Privacy</a><a href="terms.html">Terms</a><a href="contact.html">Contact</a></div><div class="footer-note">© <span id="year">2026</span> Nexusville (Pty) Ltd. All rights reserved.</div></div></footer>
+  <script>
+    const toggle=document.getElementById('menu-toggle');
+    const nav=document.getElementById('site-nav');
+    toggle.addEventListener('click',()=>{const expanded=toggle.getAttribute('aria-expanded')==='true';toggle.setAttribute('aria-expanded',String(!expanded));nav.classList.toggle('open',!expanded);toggle.textContent=expanded?'Menu':'Close';});
+    nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.textContent='Menu';}));
+    document.getElementById('year').textContent=new Date().getFullYear();
+  </script>
+</body>
+</html>
