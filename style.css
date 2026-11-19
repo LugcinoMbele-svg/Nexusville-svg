@@ -154,7 +154,7 @@ form.enquiry textarea{min-height:120px;resize:vertical;}
 /* ============ BUTTONS ============ */
 .btn{display:inline-block;padding:12px 24px;border-radius:8px;text-decoration:none;font-size:.93rem;font-weight:600;border:1px solid transparent;transition:.15s;cursor:pointer;}
 .btn.primary{background:var(--gold);color:#071B3A;}
- .btn.primary:hover{background:#E6BE00;}
+ .btn.primary:hover{background:#ADD8E6;}
 .btn.secondary,.btn.ghost{background:#fff;border-color:var(--line-strong);color:var(--ink);}
 .btn.secondary:hover,.btn.ghost:hover{border-color:var(--gold);background:var(--paper-soft);}
 .btn.dark{background:var(--night);color:var(--gold-bright);}
