@@ -8,13 +8,12 @@ This repository contains the production static website for Nexusville Group, dep
 
 - **Nexusville (Pty) Ltd** — infrastructure development, construction, property, renewable energy, agriculture, manufacturing, logistics and integrated development.
 - **Nexusville Developments (Pty) Ltd** — the group's ICT and digital solutions company. See [the ICT page](https://nexusville.co.za/nexusville-developments.html).
-- **Nexusville BizFlow** — preview catalogue for business and construction templates. Payments and paid downloads remain disabled until server-side checkout and delivery are configured.
 
 ## Website pages
 
 - Home, About, Development Sectors, Programmes
 - Construction, Business Solutions, ICT & Digital
-- BizFlow Portal, Partners, Founder, Literature
+- Partners, Founder, Literature
 - Contact and legal / privacy notices
 
 ## Development notes
@@ -22,14 +21,11 @@ This repository contains the production static website for Nexusville Group, dep
 - Production entry point: `index.html`
 - Shared styling: `style.css`
 - Shared site behaviour: `script.js`
-- Product catalogue: `products.js`
-- BizFlow preview interface: `bizflow.html` and `construction-portal.js`
-- Portal configuration: `portal-config.js` (payments disabled by default)
 - Sitemap: `sitemap.xml`; crawler rules: `robots.txt`
 
 The former unused React/Vite application has been removed to avoid maintaining two competing website implementations. The static website is the single source of truth.
 
-**Important:** Contact forms prepare an email for the visitor to send. They do not submit to a server. BizFlow is a preview catalogue; do not enable payments until checkout, webhook verification, secure storage and access control are deployed and tested.
+**Important:** Contact forms currently prepare email drafts and do not submit directly to a server. The current website scope is corporate information and enquiries; customer accounts, checkout and payment processing are excluded.
 
 ---
 
@@ -298,7 +294,7 @@ Future versions of the Nexusville platform may include:
 6. Development project portfolio
 7. Interactive maps
 8. AI-powered development tools
-9. Partner portal
+9. Partner engagement
 10. Online business and development resources
 
 ---
