@@ -4,12 +4,12 @@
    NEXUSVILLE — light blue, black and white corporate theme
    ===================================================== */
 :root{
-  --ink:#0B1830;            /* near-black headings */
-  --ink-soft:#43516A;       /* body text */
-  --night:#071B3A;          /* header / footer / dark blocks */
+  --ink:#000000;            /* near-black headings */
+  --ink-soft:#292929;       /* body text */
+  --night:#000000;          /* header / footer / dark blocks */
   --paper:#FFFFFF;
-  --paper-soft:#F8FAFF;     /* warm cream */
-  --paper-alt:#F2F6FC;
+  --paper-soft:#F4FAFD;     /* warm cream */
+  --paper-alt:#EAF7FC;
   --accent-blue:#ADD8E6;
   --accent-blue-light:#ADD8E6;
   --accent-blue-strong:#5B9DB8;
