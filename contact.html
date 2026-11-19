@@ -63,7 +63,9 @@
     </div>
     <div>
       <h2>Send an enquiry</h2>
-      <form class="enquiry" id="contact-enquiry">
+      <form class="enquiry" id="contact-enquiry" data-formsubmit>
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" class="form-honeypot">
+        <input type="hidden" name="_subject" value="New Nexusville website enquiry">
         <label for="name">Full name</label>
         <input id="name" name="name" type="text" required>
         <label for="email">Email address</label>
@@ -115,9 +117,6 @@
   </div>
 </footer>
 <script src="script.js" defer></script>
-<script>
-(function(){var form=document.getElementById("contact-enquiry");if(!form)return;form.addEventListener("submit",function(e){e.preventDefault();if(!form.reportValidity())return;var d=new FormData(form);var body=["Name: "+d.get("name"),"Email: "+d.get("email"),"Interest: "+d.get("topic"),"","Message:",d.get("message")].join("\n");var subject="Nexusville website enquiry — "+d.get("topic");var link="mailto:info@nexusville.co.za?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(body);document.getElementById("contact-form-status").textContent="Your email application will open with your enquiry prepared. Review it and press Send to submit.";window.location.href=link;});})();
-</script>
 </body>
         </html>
                                         
