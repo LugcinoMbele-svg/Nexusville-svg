@@ -30,25 +30,37 @@
   .form-status { font-weight:600; min-height:1.4em; }
   @media (max-width:640px) { .project-form .row { grid-template-columns:1fr; } }
 </style>
+
+<link rel="canonical" href="https://nexusville.co.za/construction.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Nexusville Group">
+<meta property="og:title" content="Construction & Housing | Nexusville - We Build, We Encourage">
+<meta property="og:description" content="Nexusville (Pty) Ltd construction and housing: new builds, renovations and affordable housing interest registration across South Africa.">
+<meta property="og:url" content="https://nexusville.co.za/construction.html">
 </head>
 <body>
 <header class="site">
   <div class="wrap">
-    <a class="brand" href="index.html" aria-label="Nexusville home">
-      <img class="logo-mark" src="nexusville-logo.png" alt="Nexusville — we build, we encourage" width="107" height="56" fetchpriority="high">
+    <a class="brand" href="index.html" aria-label="Nexusville Group home">
+      <img class="logo-mark" src="Black Gold Aesthetic Minimalist Initial A logo.png" alt="Nexusville Group emblem" width="107" height="56">
+      <span><span class="word">NEXUSVILLE GROUP</span><span class="tag">Building Sustainable Futures</span></span>
     </a>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-nav">
+    <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav">
       <span></span><span></span><span></span>
     </button>
-    <nav class="main" id="site-nav">
+    <nav class="main" id="site-nav" aria-label="Main navigation">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="programs.html">Programs</a>
-      <a href="construction.html" class="active">Construction</a>
+      <a href="services.html">Development Sectors</a>
+      <a href="programs.html">Programmes</a>
+      <a href="construction.html" class="active" aria-current="page">Construction</a>
       <a href="business-solutions.html">Business Solutions</a>
+
+      <a href="nexusville-developments.html">ICT & Digital</a>
       <a href="partners.html">Partners</a>
-      <a href="contact.html" class="btn-nav">Contact</a>
+      <a href="founder.html">Founder</a>
+      <a href="literature.html">Literature</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </div>
 </header>
@@ -134,7 +146,9 @@
       <p>Complete the form and your email app will open with the details ready to send to our team.</p>
     </div>
 
-    <form class="project-form" id="project-form" novalidate>
+    <form class="project-form" id="project-form" data-formsubmit>
+      <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" class="form-honeypot">
+      <input type="hidden" name="_subject" value="New Nexusville construction or project enquiry">
       <div class="row">
         <div>
           <label for="pf-name">Full name</label>
@@ -286,49 +300,6 @@
 </footer>
 
 <script src="script.js" defer></script>
-<script>
-  (function () {
-    var form = document.getElementById('project-form');
-    var status = document.getElementById('form-status');
-    if (!form) return;
 
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var f = form.elements;
-      var required = ['name', 'email', 'phone', 'type', 'location', 'details'];
-      for (var i = 0; i < required.length; i++) {
-        var field = f[required[i]];
-        if (!field.value.trim()) {
-          status.textContent = 'Please complete all required fields.';
-          field.focus();
-          return;
-        }
-      }
-      if (!/^\S+@\S+\.\S+$/.test(f.email.value.trim())) {
-        status.textContent = 'Enter a valid email address.';
-        f.email.focus();
-        return;
-      }
-
-      var lines = [
-        'Name: ' + f.name.value.trim(),
-        'Organisation: ' + (f.organisation.value.trim() || 'N/A'),
-        'Email: ' + f.email.value.trim(),
-        'Phone: ' + f.phone.value.trim(),
-        'Project type: ' + f.type.value,
-        'Location: ' + f.location.value.trim(),
-        'Budget range: ' + (f.budget.value || 'Not specified'),
-        '',
-        'Project details:',
-        f.details.value.trim()
-      ];
-      var subject = 'Project registration: ' + f.type.value;
-      window.location.href = 'mailto:info@nexusville.co.za'
-        + '?subject=' + encodeURIComponent(subject)
-        + '&body=' + encodeURIComponent(lines.join('\n'));
-      status.textContent = 'Your email app should open with the details. Press send to submit.';
-    });
-  })();
-</script>
 </body>
 </html>

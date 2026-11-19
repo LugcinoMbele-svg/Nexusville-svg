@@ -8,18 +8,21 @@
   --ink-soft:#4C5666;       /* body text */
   --night:#0A0A0A;          /* header / footer / dark blocks */
   --paper:#FFFFFF;
-  --paper-soft:#F0F7FF;     /* warm cream */
-  --paper-alt:#E6F1FF;
-  --gold:#D3182F;
-  --gold-bright:#9CCBF5;
-  --gold-deep:#B30F27;
-  --line:#D9E6F5;
-  --line-strong:#BFD6F0;
-  --on-dark:#CFD8E6;
+  --paper-soft:#F8F6F0;     /* warm cream */
+  --paper-alt:#F1EBDD;
+  --gold:#8A6A0A;
+  --gold-bright:#E8C96A;
+  --gold-deep:#80610A;
+  --line:#E5DCC2;
+  --line-strong:#D8C99E;
+  --on-dark:#D8D2C2;
 }
 
 *{box-sizing:border-box;}
+.form-honeypot{position:absolute!important;left:-10000px!important;top:auto!important;width:1px!important;height:1px!important;overflow:hidden!important;}
 html{scroll-behavior:smooth;}
+:focus-visible{outline:3px solid var(--gold-deep);outline-offset:3px;}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;}}
 body{margin:0;background:var(--paper);color:var(--ink-soft);line-height:1.6;font-size:16px;font-family:'Inter',system-ui,sans-serif;}
 h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:600;line-height:1.15;margin:0 0 .4em;color:var(--ink);}
 h1{font-size:clamp(2.3rem,5vw,3.6rem);}
@@ -37,8 +40,8 @@ header.site .wrap{display:flex;align-items:center;justify-content:space-between;
 .logo-mark{height:56px;width:auto;max-width:none;object-fit:contain;flex:none;}
 .brand .word{font-family:'Fraunces',serif;font-size:1.2rem;color:var(--ink);letter-spacing:.01em;}
 .brand .tag{font-size:.73rem;color:var(--ink-soft);display:block;margin-top:2px;}
-nav.main{display:flex;gap:26px;align-items:center;flex-wrap:wrap;}
-nav.main a{color:var(--ink-soft);text-decoration:none;font-size:.92rem;font-weight:500;padding-bottom:4px;border-bottom:2px solid transparent;transition:.15s;}
+nav.main{display:flex;gap:14px;align-items:center;flex-wrap:wrap;}
+nav.main a{color:var(--ink-soft);text-decoration:none;font-size:.82rem;font-weight:500;padding-bottom:4px;border-bottom:2px solid transparent;transition:.15s;}
 nav.main a:hover,nav.main a.active{color:var(--ink);border-bottom-color:var(--gold);}
 .btn-nav{background:var(--night);color:var(--gold-bright) !important;padding:10px 20px !important;border-radius:6px;border-bottom:0 !important;border:1px solid var(--gold);}
 .btn-nav:hover{background:var(--gold);color:#fff !important;}
@@ -55,7 +58,7 @@ nav.main a:hover,nav.main a.active{color:var(--ink);border-bottom-color:var(--go
 .slide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
 .slide::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,10,10,.88) 0%,rgba(10,10,10,.65) 50%,rgba(10,10,10,.15) 100%);}
 .slide-content{position:relative;z-index:3;max-width:1180px;margin:0 auto;padding:0 28px;width:100%;}
-.slide-content .eyebrow{color:#BFE0FF;font-weight:700;font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px;}
+.slide-content .eyebrow{color:#E8C96A;font-weight:700;font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px;}
 .slide-content h1{font-size:clamp(2.1rem,4.5vw,3.4rem);max-width:18ch;color:#fff;line-height:1.1;}
 .slide-content p{font-size:1.1rem;color:#E6EEF8;max-width:50ch;margin-top:10px;margin-bottom:24px;}
 
@@ -152,7 +155,7 @@ form.enquiry textarea{min-height:120px;resize:vertical;}
 /* ============ BUTTONS ============ */
 .btn{display:inline-block;padding:12px 24px;border-radius:8px;text-decoration:none;font-size:.93rem;font-weight:600;border:1px solid transparent;transition:.15s;cursor:pointer;}
 .btn.primary{background:var(--gold);color:#fff;}
-.btn.primary:hover{background:#A50E24;}
+ .btn.primary:hover{background:#6D5208;}
 .btn.secondary,.btn.ghost{background:#fff;border-color:var(--line-strong);color:var(--ink);}
 .btn.secondary:hover,.btn.ghost:hover{border-color:var(--gold);background:var(--paper-soft);}
 .btn.dark{background:var(--night);color:var(--gold-bright);}
@@ -228,328 +231,3 @@ section.alt p.note{background:#fff;}
 .prose a{color:var(--gold-deep);text-decoration:underline;}
 .prose ul.list li{font-size:.95rem;}
 @media(max-width:700px){ul.list.cols{grid-template-columns:1fr;}}
-/* =========================================
-   NEXUSVILLE CONSTRUCTION MARKETPLACE
-========================================= */
-
-.nv-marketplace {
-  padding: 80px 0;
-  background: #111310;
-  color: #f5f5f5;
-}
-
-.nv-marketplace-heading {
-  max-width: 780px;
-  margin: 0 auto 38px;
-  text-align: center;
-}
-
-.nv-marketplace-heading h2 {
-  margin: 12px 0;
-  font-size: clamp(28px, 4vw, 42px);
-  line-height: 1.2;
-}
-
-.nv-marketplace-heading p {
-  color: #c4c7c0;
-  line-height: 1.8;
-}
-
-.nv-marketplace-banner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 30px;
-  padding: 32px;
-  margin-bottom: 35px;
-  background: #20231e;
-  border: 1px solid #41463b;
-  border-radius: 18px;
-}
-
-.nv-marketplace-banner > div:first-child {
-  flex: 1;
-}
-
-.nv-marketplace-label {
-  display: inline-block;
-  margin-bottom: 12px;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 2px;
-  color: #ffcf24;
-}
-
-.nv-marketplace-banner h3 {
-  margin: 0 0 12px;
-  font-size: clamp(22px, 3vw, 30px);
-}
-
-.nv-marketplace-banner p {
-  margin-bottom: 0;
-  color: #c4c7c0;
-  line-height: 1.7;
-}
-
-.nv-marketplace-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.nv-marketplace-button {
-  display: inline-block;
-  padding: 13px 20px;
-  border-radius: 9px;
-  background: #ffcf24;
-  color: #171710;
-  text-decoration: none;
-  font-weight: 700;
-  text-align: center;
-}
-
-.nv-marketplace-button:hover {
-  filter: brightness(1.08);
-}
-
-.nv-marketplace-button.nv-button-outline {
-  color: #fff;
-  background: transparent;
-  border: 1px solid #686d62;
-}
-
-.nv-marketplace-controls {
-  display: grid;
-  grid-template-columns: 1fr 260px;
-  gap: 10px 18px;
-  margin-bottom: 28px;
-}
-
-.nv-search-label {
-  font-size: 13px;
-  font-weight: 700;
-  color: #d5d7d0;
-}
-
-#nv-product-search,
-#nv-category-filter {
-  box-sizing: border-box;
-  width: 100%;
-  min-height: 48px;
-  padding: 12px 14px;
-  color: #fff;
-  background: #20231e;
-  border: 1px solid #41463b;
-  border-radius: 9px;
-  font: inherit;
-}
-
-#nv-product-search {
-  grid-column: 1;
-  grid-row: 2;
-}
-
-#nv-category-filter {
-  grid-column: 2;
-  grid-row: 2;
-}
-
-#nv-product-search::placeholder {
-  color: #9fa398;
-}
-
-.nv-product-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 22px;
-}
-
-.nv-product-card {
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  padding: 23px;
-  background: #20231e;
-  border: 1px solid #41463b;
-  border-radius: 15px;
-  transition: transform 0.2s, border-color 0.2s;
-}
-
-.nv-product-card:hover {
-  transform: translateY(-4px);
-  border-color: #ffcf24;
-}
-
-.nv-product-category {
-  margin-bottom: 12px;
-  color: #ffcf24;
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.7px;
-}
-
-.nv-product-card h3 {
-  margin: 0 0 12px;
-  font-size: 20px;
-  line-height: 1.4;
-}
-
-.nv-product-card p {
-  color: #c4c7c0;
-  font-size: 14px;
-  line-height: 1.7;
-}
-
-.nv-product-format {
-  align-self: flex-start;
-  margin: 5px 0 15px;
-  padding: 6px 10px;
-  color: #d8dacf;
-  background: #30342c;
-  border-radius: 6px;
-  font-size: 12px;
-}
-
-.nv-product-price {
-  margin-top: auto;
-  padding-top: 12px;
-  font-size: 25px;
-  font-weight: 800;
-}
-
-.nv-product-button {
-  display: block;
-  width: 100%;
-  margin-top: 15px;
-  padding: 13px;
-  color: #171710;
-  background: #ffcf24;
-  border: 0;
-  border-radius: 8px;
-  font: inherit;
-  font-weight: 700;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.nv-product-button:hover {
-  filter: brightness(1.08);
-}
-
-.nv-marketplace-empty {
-  grid-column: 1 / -1;
-  padding: 30px;
-  text-align: center;
-  color: #c4c7c0;
-  background: #20231e;
-  border-radius: 12px;
-}
-
-.nv-marketplace-note {
-  margin-top: 38px;
-  padding: 22px;
-  color: #c4c7c0;
-  background: #1b1e19;
-  border-left: 3px solid #ffcf24;
-  border-radius: 8px;
-  font-size: 13px;
-  line-height: 1.8;
-}
-
-.nv-marketplace-note strong {
-  color: #fff;
-}
-
-@media (max-width: 900px) {
-  .nv-product-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .nv-marketplace-banner {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-
-@media (max-width: 600px) {
-  .nv-marketplace {
-    padding: 55px 0;
-  }
-
-  .nv-marketplace-banner {
-    padding: 22px;
-  }
-
-  .nv-marketplace-controls {
-    grid-template-columns: 1fr;
-  }
-
-  #nv-product-search,
-  #nv-category-filter {
-    grid-column: 1;
-    grid-row: auto;
-  }
-
-  .nv-product-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .nv-marketplace-actions {
-    width: 100%;
-  }
-
-  .nv-marketplace-button {
-    flex: 1;
-  }
-                   }
-/* Nexusville product details dialog */
-
-.nv-product-dialog {
-  width: min(90%, 560px);
-  max-height: 85vh;
-  overflow-y: auto;
-  padding: 0;
-  color: #f5f5f5;
-  background: #20231e;
-  border: 1px solid #55594e;
-  border-radius: 16px;
-}
-
-.nv-product-dialog::backdrop {
-  background: rgba(0, 0, 0, 0.78);
-}
-
-.nv-product-dialog-content {
-  padding: 28px;
-}
-
-.nv-product-dialog-content h2 {
-  margin: 15px 0;
-  line-height: 1.35;
-}
-
-.nv-product-dialog-content p,
-.nv-product-dialog-content li {
-  line-height: 1.8;
-  color: #d4d6cf;
-}
-
-.nv-product-dialog-content li {
-  margin-bottom: 8px;
-}
-
-.nv-dialog-close {
-  float: right;
-  padding: 8px 12px;
-  color: #fff;
-  background: transparent;
-  border: 1px solid #666b60;
-  border-radius: 7px;
-  cursor: pointer;
-}
-
-.nv-dialog-close:hover {
-  border-color: #ffcf24;
-     }

@@ -57,7 +57,7 @@
   var dotsWrap = slider.querySelector('.slider-dots');
   var prevBtn = slider.querySelector('.slider-btn.prev');
   var nextBtn = slider.querySelector('.slider-btn.next');
-  if (!slides.length) return;
+  if (slides.length < 2) return;
 
   var activeIndex = slides.findIndex(function (slide) {
     return slide.classList.contains('active');
@@ -98,6 +98,40 @@
   if (nextBtn) nextBtn.addEventListener('click', function () { next(); restart(); });
   if (prevBtn) prevBtn.addEventListener('click', function () { prev(); restart(); });
   restart();
+})();
+
+// Enquiry forms: submit securely through FormSubmit and report the actual result.
+(function () {
+  var forms = document.querySelectorAll('form[data-formsubmit]');
+  forms.forEach(function (form) {
+    form.addEventListener('submit', async function (event) {
+      event.preventDefault();
+      if (!form.reportValidity()) return;
+      var status = form.querySelector('[role="status"]');
+      var button = form.querySelector('button[type="submit"]');
+      var originalText = button ? button.textContent : '';
+      if (form.querySelector('[name="_honey"]').value) return;
+      if (button) { button.disabled = true; button.textContent = 'Sending…'; }
+      if (status) status.textContent = 'Sending your enquiry securely…';
+      try {
+        var payload = {};
+        new FormData(form).forEach(function (value, key) { payload[key] = value; });
+        var response = await fetch('https://formsubmit.co/ajax/info@nexusville.co.za', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        var result = await response.json();
+        if (!response.ok || result.success === false) throw new Error(result.message || 'Submission failed');
+        if (status) status.textContent = 'Thank you. Your enquiry has been accepted by the form service for delivery to Nexusville. We will respond using the contact details you provided.';
+        form.reset();
+      } catch (error) {
+        if (status) status.textContent = 'We could not submit your enquiry. Please try again or email info@nexusville.co.za directly.';
+      } finally {
+        if (button) { button.disabled = false; button.textContent = originalText; }
+      }
+    });
+  });
 })();
 
 // Footer year stays current automatically

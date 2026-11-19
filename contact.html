@@ -7,29 +7,37 @@
 <meta name="description" content="Contact Nexusville (Pty) Ltd — investment, partnership and general enquiries.">
 <link rel="icon" href="nexusville-logo.png">
 <link rel="stylesheet" href="style.css">
+
+<link rel="canonical" href="https://nexusville.co.za/contact.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Nexusville Group">
+<meta property="og:title" content="Contact | Nexusville - Building Sustainable Futures">
+<meta property="og:description" content="Contact Nexusville (Pty) Ltd — investment, partnership and general enquiries.">
+<meta property="og:url" content="https://nexusville.co.za/contact.html">
 </head>
 <body>
 <header class="site">
   <div class="wrap">
-    <a class="brand" href="index.html">
-      <img class="logo-mark" src="nexusville-logo.png" alt="Nexusville logo">
-      <span>
-        <span class="word">Nexusville</span>
-        <span class="tag">Building Sustainable Futures</span>
-      </span>
+    <a class="brand" href="index.html" aria-label="Nexusville Group home">
+      <img class="logo-mark" src="Black Gold Aesthetic Minimalist Initial A logo.png" alt="Nexusville Group emblem" width="107" height="56">
+      <span><span class="word">NEXUSVILLE GROUP</span><span class="tag">Building Sustainable Futures</span></span>
     </a>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-nav">
+    <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav">
       <span></span><span></span><span></span>
     </button>
-    <nav class="main" id="site-nav">
+    <nav class="main" id="site-nav" aria-label="Main navigation">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="programs.html">Programs</a>
+      <a href="services.html">Development Sectors</a>
+      <a href="programs.html">Programmes</a>
       <a href="construction.html">Construction</a>
       <a href="business-solutions.html">Business Solutions</a>
+
+      <a href="nexusville-developments.html">ICT & Digital</a>
       <a href="partners.html">Partners</a>
-      <a href="contact.html" class="btn-nav active">Contact</a>
+      <a href="founder.html">Founder</a>
+      <a href="literature.html">Literature</a>
+      <a href="contact.html" class="active" aria-current="page">Contact</a>
     </nav>
   </div>
 </header>
@@ -47,7 +55,7 @@
       <h2>Get in touch</h2>
       <ul class="contact-list">
         <li><span class="l">Email</span>Lugcino@nexusville.co.za</li>
-        <li><span class="l">Email</span>lugcino@nomduva.org.za</li>
+        <li><span class="l">Email</span>info@nexusville.co.za</li>
         <li><span class="l">Phone</span>+27 60 471 6302</li>
         <li><span class="l">Head office</span>South Africa</li>
       </ul>
@@ -55,7 +63,9 @@
     </div>
     <div>
       <h2>Send an enquiry</h2>
-      <form class="enquiry" action="mailto:Lugcino@nexusville.co.za" method="post" enctype="text/plain">
+      <form class="enquiry" id="contact-enquiry" data-formsubmit>
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" class="form-honeypot">
+        <input type="hidden" name="_subject" value="New Nexusville website enquiry">
         <label for="name">Full name</label>
         <input id="name" name="name" type="text" required>
         <label for="email">Email address</label>
@@ -72,6 +82,7 @@
         <label for="message">Message</label>
         <textarea id="message" name="message" required></textarea>
         <p style="margin-top:20px;"><button class="btn dark" type="submit">Send enquiry</button></p>
+      <p id="contact-form-status" class="form-status" role="status" aria-live="polite"></p>
       </form>
     </div>
   </div>
@@ -80,7 +91,7 @@
   <div class="wrap">
     <div>
       <div class="brand" style="margin-bottom:14px;">
-        <img class="logo-mark" src="Nexusville-logo.png" alt="Nexusville logo">
+        <img class="logo-mark" src="Black Gold Aesthetic Minimalist Initial A logo.png" alt="Nexusville logo">
         <span><span class="word" style="color:#fff;">Nexusville</span><span class="tag">Building Sustainable Futures</span></span>
       </div>
       <p style="color:#9DB2D0;font-size:.9rem;max-width:38ch;">A South African infrastructure and property development company building integrated, self-sustaining communities across twelve economic pillars.</p>

@@ -1,12 +1,34 @@
-NEXUSVILLE
+# Nexusville Group
 
-Building Sustainable Futures.
+**Building Sustainable Futures.**
 
-Nexusville (Pty) Ltd is a multidisciplinary development company focused on infrastructure development, sustainable development, renewable energy, ICT, technology, property development and innovative solutions.
+This repository contains the production static website for Nexusville Group, deployed from the repository root. The website uses HTML, CSS and vanilla JavaScript so it can be maintained without a Node.js build step.
 
-Nexusville aims to connect development, technology, sustainability and opportunity through an integrated development ecosystem.
+## Group structure
+
+- **Nexusville (Pty) Ltd** — infrastructure development, construction, property, renewable energy, agriculture, manufacturing, logistics and integrated development.
+- **Nexusville Developments (Pty) Ltd** — the group's ICT and digital solutions company. See [the ICT page](https://nexusville.co.za/nexusville-developments.html).
+
+## Website pages
+
+- Home, About, Development Sectors, Programmes
+- Construction, Business Solutions, ICT & Digital
+- Partners, Founder, Literature
+- Contact and legal / privacy notices
+
+## Development notes
+
+- Production entry point: `index.html`
+- Shared styling: `style.css`
+- Shared site behaviour: `script.js`
+- Sitemap: `sitemap.xml`; crawler rules: `robots.txt`
+
+The former unused React/Vite application has been removed to avoid maintaining two competing website implementations. The static website is the single source of truth.
+
+**Important:** Contact forms currently prepare email drafts and do not submit directly to a server. The current website scope is corporate information and enquiries; customer accounts, checkout and payment processing are excluded.
 
 ---
+
 
 🌍 About Nexusville
 
@@ -272,7 +294,7 @@ Future versions of the Nexusville platform may include:
 6. Development project portfolio
 7. Interactive maps
 8. AI-powered development tools
-9. Partner portal
+9. Partner engagement
 10. Online business and development resources
 
 ---
