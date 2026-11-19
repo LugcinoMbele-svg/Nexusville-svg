@@ -2,7 +2,6 @@
 
 (function () {
   var assetNames = {
-    'nexusville-logo.png': 'nexusville-logo.png',
     'nexusville-group-companies.jpg': 'nexusville-group-companies.jpg',
     'nexusville-nyadf-partnership.jpg': 'nexusville-nyadf-partnership.jpg',
     'nexusville-business-solutions.png': 'nexusville-business-solutions.png',
