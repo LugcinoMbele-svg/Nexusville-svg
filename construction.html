@@ -300,49 +300,6 @@
 </footer>
 
 <script src="script.js" defer></script>
-<script>
-  (function () {
-    var form = document.getElementById('project-form');
-    var status = document.getElementById('form-status');
-    if (!form) return;
 
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var f = form.elements;
-      var required = ['name', 'email', 'phone', 'type', 'location', 'details'];
-      for (var i = 0; i < required.length; i++) {
-        var field = f[required[i]];
-        if (!field.value.trim()) {
-          status.textContent = 'Please complete all required fields.';
-          field.focus();
-          return;
-        }
-      }
-      if (!/^\S+@\S+\.\S+$/.test(f.email.value.trim())) {
-        status.textContent = 'Enter a valid email address.';
-        f.email.focus();
-        return;
-      }
-
-      var lines = [
-        'Name: ' + f.name.value.trim(),
-        'Organisation: ' + (f.organisation.value.trim() || 'N/A'),
-        'Email: ' + f.email.value.trim(),
-        'Phone: ' + f.phone.value.trim(),
-        'Project type: ' + f.type.value,
-        'Location: ' + f.location.value.trim(),
-        'Budget range: ' + (f.budget.value || 'Not specified'),
-        '',
-        'Project details:',
-        f.details.value.trim()
-      ];
-      var subject = 'Project registration: ' + f.type.value;
-      window.location.href = 'mailto:info@nexusville.co.za'
-        + '?subject=' + encodeURIComponent(subject)
-        + '&body=' + encodeURIComponent(lines.join('\n'));
-      status.textContent = 'Your email app should open with the details. Press send to submit.';
-    });
-  })();
-</script>
 </body>
 </html>
