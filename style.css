@@ -10,9 +10,9 @@
   --paper:#FFFFFF;
   --paper-soft:#F8F6F0;     /* warm cream */
   --paper-alt:#F1EBDD;
-  --gold:#C9A227;
+  --gold:#8A6A0A;
   --gold-bright:#E8C96A;
-  --gold-deep:#967515;
+  --gold-deep:#80610A;
   --line:#E5DCC2;
   --line-strong:#D8C99E;
   --on-dark:#D8D2C2;
@@ -20,6 +20,8 @@
 
 *{box-sizing:border-box;}
 html{scroll-behavior:smooth;}
+:focus-visible{outline:3px solid var(--gold-deep);outline-offset:3px;}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;}}
 body{margin:0;background:var(--paper);color:var(--ink-soft);line-height:1.6;font-size:16px;font-family:'Inter',system-ui,sans-serif;}
 h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:600;line-height:1.15;margin:0 0 .4em;color:var(--ink);}
 h1{font-size:clamp(2.3rem,5vw,3.6rem);}
@@ -152,7 +154,7 @@ form.enquiry textarea{min-height:120px;resize:vertical;}
 /* ============ BUTTONS ============ */
 .btn{display:inline-block;padding:12px 24px;border-radius:8px;text-decoration:none;font-size:.93rem;font-weight:600;border:1px solid transparent;transition:.15s;cursor:pointer;}
 .btn.primary{background:var(--gold);color:#fff;}
-.btn.primary:hover{background:#A50E24;}
+ .btn.primary:hover{background:#6D5208;}
 .btn.secondary,.btn.ghost{background:#fff;border-color:var(--line-strong);color:var(--ink);}
 .btn.secondary:hover,.btn.ghost:hover{border-color:var(--gold);background:var(--paper-soft);}
 .btn.dark{background:var(--night);color:var(--gold-bright);}

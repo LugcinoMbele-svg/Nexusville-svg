@@ -57,7 +57,7 @@
   var dotsWrap = slider.querySelector('.slider-dots');
   var prevBtn = slider.querySelector('.slider-btn.prev');
   var nextBtn = slider.querySelector('.slider-btn.next');
-  if (!slides.length) return;
+  if (slides.length < 2) return;
 
   var activeIndex = slides.findIndex(function (slide) {
     return slide.classList.contains('active');
