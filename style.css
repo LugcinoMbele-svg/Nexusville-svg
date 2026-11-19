@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap');
 
 /* =====================================================
-   NEXUSVILLE — black & gold theme (matches the V crest logo)
+   NEXUSVILLE — light blue, black and white corporate theme
    ===================================================== */
 :root{
   --ink:#0B1830;            /* near-black headings */
@@ -10,9 +10,9 @@
   --paper:#FFFFFF;
   --paper-soft:#F8FAFF;     /* warm cream */
   --paper-alt:#F2F6FC;
-  --gold:#FFD400;
-  --gold-bright:#FFE34D;
-  --gold-deep:#D6A900;
+  --gold:#ADD8E6;
+  --gold-bright:#ADD8E6;
+  --gold-deep:#5B9DB8;
   --line:#E1E7F0;
   --line-strong:#C9D3E2;
   --on-dark:#E4EAF4;
@@ -57,7 +57,7 @@ nav.main a:hover,nav.main a.active{color:var(--ink);border-bottom-color:var(--go
 .slide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
 .slide::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,27,58,.90) 0%,rgba(7,27,58,.68) 50%,rgba(7,27,58,.16) 100%);}
 .slide-content{position:relative;z-index:3;max-width:1180px;margin:0 auto;padding:0 28px;width:100%;}
-.slide-content .eyebrow{color:#FFE34D;font-weight:700;font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px;}
+.slide-content .eyebrow{color:#ADD8E6;font-weight:700;font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px;}
 .slide-content h1{font-size:clamp(2.1rem,4.5vw,3.4rem);max-width:18ch;color:#fff;line-height:1.1;}
 .slide-content p{font-size:1.1rem;color:#E6EEF8;max-width:50ch;margin-top:10px;margin-bottom:24px;}
 
@@ -234,15 +234,15 @@ section.alt p.note{background:#fff;}
 .reference-hero{background:radial-gradient(circle at 78% 48%,#173965 0%,#0B2850 38%,#071B3A 78%);color:#fff;min-height:360px;position:relative;overflow:hidden;}
 .reference-hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(120deg,transparent 48%,rgba(255,227,77,.12) 49%,transparent 50%),radial-gradient(circle at 78% 50%,rgba(255,227,77,.14),transparent 34%);pointer-events:none;}
 .reference-hero .wrap{min-height:360px;display:grid;grid-template-columns:1.25fr .75fr;align-items:center;gap:28px;padding-top:42px;padding-bottom:42px;position:relative;z-index:1;}
-.reference-hero h1{font-family:'Inter',sans-serif;font-size:clamp(2.5rem,5.4vw,4.2rem);font-weight:800;line-height:1.04;letter-spacing:-.035em;color:#FFE34D;margin-bottom:8px;}
+.reference-hero h1{font-family:'Inter',sans-serif;font-size:clamp(2.5rem,5.4vw,4.2rem);font-weight:800;line-height:1.04;letter-spacing:-.035em;color:#ADD8E6;margin-bottom:8px;}
 .reference-hero h2{font-family:'Inter',sans-serif;color:#fff;font-size:clamp(1.5rem,3vw,2.35rem);font-weight:700;margin-bottom:12px;}
 .reference-hero p{color:#E8EEF8;max-width:54ch;margin-bottom:22px;}
-.reference-hero .eyebrow{color:#FFE34D;font-weight:700;letter-spacing:.04em;}
+.reference-hero .eyebrow{color:#ADD8E6;font-weight:700;letter-spacing:.04em;}
 .reference-hero .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px;}
 .reference-hero .hero-meta{color:#E8EEF8;font-size:.85rem;font-weight:600;}
-.reference-hero .hero-meta span{color:#FFE34D;margin:0 8px;}
-.reference-hero .btn.primary{background:#FFD400;border-color:#FFD400;color:#071B3A;}
-.reference-hero .btn.primary:hover{background:#FFD400;color:#071B3A;}
+.reference-hero .hero-meta span{color:#ADD8E6;margin:0 8px;}
+.reference-hero .btn.primary{background:#ADD8E6;border-color:#ADD8E6;color:#071B3A;}
+.reference-hero .btn.primary:hover{background:#ADD8E6;color:#071B3A;}
 .reference-hero .btn.secondary{background:transparent;border-color:#DCE6F5;color:#fff;}
 .reference-industries{padding:26px 0 34px;background:#fff;}
 .reference-industries .section-head{text-align:center;max-width:none;margin:0 auto 22px;}
@@ -250,13 +250,13 @@ section.alt p.note{background:#fff;}
 .reference-industries .section-head p{max-width:none;margin:0 auto;color:#27364D;}
 .industry-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;}
 .industry-card{min-height:108px;border:1px solid #D9DFE8;border-radius:14px;background:#fff;box-shadow:0 4px 12px rgba(7,27,58,.10);padding:15px 16px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;}
-.industry-card .industry-icon{font-size:1.65rem;color:#D6A900;line-height:1.2;margin-bottom:5px;}
+.industry-card .industry-icon{font-size:1.65rem;color:#5B9DB8;line-height:1.2;margin-bottom:5px;}
 .industry-card h3{font-family:'Inter',sans-serif;font-size:1rem;font-weight:750;color:#0B1830;margin:0 0 4px;}
 .industry-card p{font-size:.85rem;line-height:1.35;color:#27364D;margin:0;max-width:38ch;}
 .subsidiary-strip{background:#071B3A;padding:20px 0;border-top:1px solid #1C2E49;}
 .subsidiary-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;max-width:900px;margin:0 auto;}
-.subsidiary-card{border:1px solid #FFE34D;padding:14px 12px;text-align:center;color:#fff;text-decoration:none;min-height:78px;display:flex;flex-direction:column;justify-content:center;transition:.2s;}
-.subsidiary-card strong{color:#FFE34D;font-size:1rem;letter-spacing:.03em;}
+.subsidiary-card{border:1px solid #ADD8E6;padding:14px 12px;text-align:center;color:#fff;text-decoration:none;min-height:78px;display:flex;flex-direction:column;justify-content:center;transition:.2s;}
+.subsidiary-card strong{color:#ADD8E6;font-size:1rem;letter-spacing:.03em;}
 .subsidiary-card span{font-size:.76rem;color:#E4EAF4;}
 .subsidiary-card:hover{background:rgba(255,227,77,.1);transform:translateY(-2px);}
 @media(max-width:480px){.industry-grid{grid-template-columns:1fr;}.reference-hero .wrap{padding-top:30px;padding-bottom:30px;}.reference-hero{min-height:0;}}
